@@ -38,9 +38,10 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "index";
 $route['404_override'] = '';
 
+$route['about'] = "index/about";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
