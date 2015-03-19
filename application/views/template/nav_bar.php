@@ -1,9 +1,10 @@
 <nav id="nav">
 						<ul>
-							<li class="active"><a href="index.html">Homepage</a></li>
-							<li><a href="threecolumn.html">Two Sidebars</a></li>
-							<li><a href="twocolumn1.html">Left Sidebar</a></li>
-							<li><a href="twocolumn2.html">Right Sidebar</a></li>
-							<li><a href="onecolumn.html">No Sidebar</a></li>
+							<li class="active"><a href="<?=base_url()?>">Home</a></li>
+							<li><a href="<?=base_url()?>about">About us</a></li>
+							<li><a href="<?=base_url()?>signup">Signup for free trial</a></li>
+							<li><a href="<?=base_url()?>signin">Signin</a></li>
+                            <li><a href="<?=base_url()?>contact">Contact us</a></li>
+
 						</ul>
 					</nav>
