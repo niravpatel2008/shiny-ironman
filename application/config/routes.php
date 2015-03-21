@@ -44,6 +44,7 @@ $route['404_override'] = '';
 $route['about'] = "index/about";
 $route['contact'] = "index/contact";
 $route['signin'] = "index/signin";
+$route['signup/(.*)'] = 'signup/index/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

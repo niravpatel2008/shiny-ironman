@@ -33,6 +33,12 @@ class Index extends CI_Controller {
 		$data['view'] = "signin";
 		$this->load->view('content', $data);
 	}
+
+	public function signout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
 }
 
 /* End of file index.php */
