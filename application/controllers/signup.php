@@ -1,19 +1,18 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Signup extends CI_Controller {
 
-    function __construct(){
+    function __construct() {
         parent::__construct();
-
     }
 
-
-	public function index($id='')
-	{
-        if($id > 0){
+    public function index($id = '') {
+        if ($id > 0) {
             $post = $this->input->post();
-            if($post)
-            {
+            if ($post) {
                 $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
                 $this->form_validation->set_rules('lname', 'Last Name', 'trim|required');
                 $this->form_validation->set_rules('email', 'Email', 'valid_email|trim|required|is_unique[users.email]');
@@ -23,44 +22,42 @@ class Signup extends CI_Controller {
                 if ($this->form_validation->run()) {
 
                     $insert_data = array('fname' => $post['fname'],
-                                            'lname' => $post['lname'],
-                                            'email' => $post['email'],
-                                            'password' => md5($post['password']),
-                                            'phone' => $post['phone'],
-                                            'package_id' => $id,
-                                            'website' => $post['website']
-                                        );
+                        'lname' => $post['lname'],
+                        'email' => $post['email'],
+                        'password' => md5($post['password']),
+                        'phone' => $post['phone'],
+                        'package_id' => $id,
+                        'website' => $post['website']
+                    );
                     $ret = $this->common_model->insertData('users', $insert_data);
                     # create session
                     $data = array('id' => $ret,
-                                    'email' => $post['email']
-                                );
-                    $this->session->set_userdata('front_session',$data);
+                        'email' => $post['email']
+                    );
+                    $this->session->set_userdata('front_session', $data);
 
-                    if($ret > 0){
+                    if ($ret > 0) {
                         $flash_arr = array('flash_type' => 'success',
-                                        'flash_msg' => 'Welcome to DX chat.'
-                                    );
-                    }else{
+                            'flash_msg' => 'Welcome to DX chat.'
+                        );
+                    } else {
                         $flash_arr = array('flash_type' => 'error',
-                                        'flash_msg' => 'An error occurred while processing.'
-                                    );
+                            'flash_msg' => 'An error occurred while processing.'
+                        );
                     }
                     $this->session->set_flashdata('flash_arr', $flash_arr);
-                    redirect(base_url()."dashboard");
-
+                    redirect(base_url() . "dashboard");
                 }
             }
 
             $data['view'] = "signup";
-        }else{
-            $data['packages'] = $this->common_model->selectData('package_details', '*', array('status' => 1) );
+        } else {
+            $data['packages'] = $this->common_model->selectData('package_details', '*', array('status' => 1));
             $data['view'] = "index";
         }
 
-		$this->load->view('content', $data);
-	}
-
+        $this->load->view('content', $data);
+    }
 
 }
 
