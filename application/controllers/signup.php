@@ -9,8 +9,9 @@ class Signup extends CI_Controller {
         parent::__construct();
     }
 
-    public function index($id = '') {
-        if ($id > 0) {
+    public function index() {
+        //if ($id > 0) {
+			
             $post = $this->input->post();
             if ($post) {
                 $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
@@ -20,14 +21,28 @@ class Signup extends CI_Controller {
                 $this->form_validation->set_rules('password2', 'Confirm password', 'trim|required');
 
                 if ($this->form_validation->run()) {
-
-                    $insert_data = array('fname' => $post['fname'],
+					$packageId = $post['planSelect'];
+					switch($packageId)
+					{
+						case 1:
+							$expDate=Date('Y-m-d', strtotime("+30 days"));
+						break;
+						case 2:
+							$expDate=Date('Y-m-d', strtotime("+180 days"));
+						break;
+						case 3:
+							$expDate=Date('Y-m-d', strtotime("+365 days"));
+						break;
+					}
+                    $insert_data = array(
+						'fname' => $post['fname'],
                         'lname' => $post['lname'],
                         'email' => $post['email'],
                         'password' => md5($post['password']),
                         'phone' => $post['phone'],
-                        'package_id' => $id,
-                        'website' => $post['website']
+                        'package_id' => $packageId,
+                        'website' => $post['website'],
+						'package_expiry_date' => $expDate
                     );
                     $ret = $this->common_model->insertData('users', $insert_data);
                     # create session
@@ -50,11 +65,11 @@ class Signup extends CI_Controller {
                 }
             }
 
-            $data['view'] = "signup";
-        } else {
+           // $data['view'] = "signup";
+        //} else {
             $data['packages'] = $this->common_model->selectData('package_details', '*', array('status' => 1));
             $data['view'] = "index";
-        }
+        //}
 
         $this->load->view('content', $data);
     }

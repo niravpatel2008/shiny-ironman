@@ -61,6 +61,68 @@ class Index extends CI_Controller {
         redirect(base_url());
     }
 
+	public function forgetpassword()
+	{
+		$post = $this->input->post();
+		//echo 'hdldl';die;
+		//print_r($post);die;
+		if ($post) {
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			if ($this->form_validation->run()) {
+				$where = array('email' => $post['email']);
+
+				$user = $this->common_model->selectData('users', '*', $where);
+                if (count($user) > 0)
+				{
+                    # update user pwd
+                    $data = array('id' => $user[0]->id,
+                        'email' => $user[0]->email
+                    );
+					$newpassword = random_string('alnum', 8);
+					$data = array('password' => md5($newpassword));
+					$upid = $this->common_model->updateData('users',$data,$where);
+					
+					## send mail
+					$login_details = array('email' => $user[0]->email,'password' => $newpassword);
+					$emailTpl = $this->load->view('email_templates/forgot_password', '', true);
+
+					$search = array('{username}', '{password}');
+					$replace = array($login_details['email'], $login_details['password']);
+					$emailTpl = str_replace($search, $replace, $emailTpl);
+
+					$ret = sendEmail($user[0]->email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);
+					if ($ret)
+					{
+						$flash_arr = array('flash_type' => 'success',
+											'flash_msg' => "Your Request has been submitted successfully.You will receive mail sortly with your credentials."
+										);
+					}else
+					{
+						$flash_arr = array(
+							'flash_type' => 'error',
+							'flash_msg' => 'An error occurred while processing.'
+							);
+							$this->session->set_flashdata('flash_arr', $flash_arr);
+						redirect("index/forgetpassword");
+					}
+					$this->session->set_flashdata('flash_arr', $flash_arr);
+					redirect("signin");
+					
+
+				}
+				else
+				{
+					$flash_arr = array('flash_type' => 'error',
+					'flash_msg' => 'User does not exist.');
+					$this->session->set_flashdata('flash_arr', $flash_arr);
+					redirect("index/forgetpassword");
+                }
+			}
+		}
+		$data['view'] = "forgetpassword";
+        $this->load->view('content', $data);
+	}
+
 }
 
 /* End of file index.php */

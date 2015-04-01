@@ -39,3 +39,14 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
+
+
+
+/**
+* Email constants
+*/
+define('FROM_EMAIL', 'mitesh24shah@gmail.com');
+define('SUBJECT_CONTACT_ADMIN', 'Contact us');
+define('FROM_NAME', 'Dx Chat');
+define('SUBJECT_LOGIN_INFO', 'Login info');
+define('SUBJECT_DEAL_INFO', 'Deal info');

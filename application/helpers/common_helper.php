@@ -112,5 +112,8 @@
 		return str_replace(array("/","(",")","&",),"-",$str);
 	}
 
-
+	function my_form_error($errtxt)
+	{
+		return form_error($errtxt,"<p class='red'>","</p>");
+	}
 ?>
