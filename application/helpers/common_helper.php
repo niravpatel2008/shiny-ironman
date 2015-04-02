@@ -41,8 +41,8 @@
 
         $CI =& get_instance();
         $session = $CI->session->userdata('front_session');
-
-        if (!isset($session['id'])) {
+		
+        if (!isset($session['u_id'])) {
             redirect(base_url());
         }
     }
@@ -115,5 +115,14 @@
 	function my_form_error($errtxt)
 	{
 		return form_error($errtxt,"<p class='red'>","</p>");
+	}
+
+	function getPackages()
+	{
+		$packageArr = array();
+		$packageArr[]=array('id'=>1,'name'=>'Free','price'=>0,'duration'=>'1 Month');
+		$packageArr[]=array('id'=>2,'name'=>'Premium','price'=>99,'duration'=>'6 Months');
+		$packageArr[]=array('id'=>3,'name'=>'Enterprise','price'=>199,'duration'=>'1 Year');
+		return $packageArr;
 	}
 ?>
