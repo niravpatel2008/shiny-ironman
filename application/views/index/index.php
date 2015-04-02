@@ -3,16 +3,24 @@
             <div class="item active">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Free Onepage Theme</h1>
-                        <p class="lead">Xeon is the best free onepage responsive theme available arround the globe<br>Download it right now for free</p>
+                        <h1>Live chat to your website easily</h1>
+                        <p class="lead">All you need to chat on your Personal Website or Blogs or eCommerce Site and much more..</p>
                     </div>
                 </div>
             </div><!--/.item-->
             <div class="item">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>ShapeBootstrap.net</h1>
-                        <p class="lead">Download free but 100% premium quaility twitter Bootstrap based WordPress and HTML themes <br>from shapebootstrap.net</p>
+                        <h1>Let your visitors stay on site 10 times longer</h1>
+                        <p class="lead">Stay in touch with large no. of visitors of your website using innovative and powerful and enhance live chat application</p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+			<div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>No downloads & installation,just copy-paste</h1>
+                        <p class="lead">Engage your No. of visitors with amazing, in-browser live support chats.</p>
                     </div>
                 </div>
             </div><!--/.item-->
@@ -184,44 +192,92 @@
             <div class="box">
                 <div class="center">
                     <h2>See our Pricings</h2>
-                    <p class="lead">Pellentesque habitant morbi tristique senectus et netus et <br>malesuada fames ac turpis egestas.</p>
+                    <p class="lead">We are turn your visitors into customers throgh your Support.Let's Join Us and Enjoy our Service.</p>
                 </div><!--/.center-->   
-                <div class="big-gap"></div>
+                
                 <div id="pricing-table" class="row">
                     <div class="col-sm-4">
                         <ul class="plan">
-                            <li class="plan-name">Basic</li>
-                            <li class="plan-price">$29</li>
-                            <li>5GB Storage</li>
-                            <li>1GB RAM</li>
-                            <li>400GB Bandwidth</li>
-                            <li>10 Email Address</li>
-                            <li>Forum Support</li>
-                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Signup</a></li>
-                        </ul>
-                    </div><!--/.col-sm-4-->
-                    <div class="col-sm-4">
-                        <ul class="plan featured">
-                            <li class="plan-name">Standard</li>
-                            <li class="plan-price">$49</li>
-                            <li>10GB Storage</li>
-                            <li>2GB RAM</li>
-                            <li>1TB Bandwidth</li>
-                            <li>100 Email Address</li>
-                            <li>Forum Support</li>
-                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Signup</a></li>
+                            <li class="plan-name">Free</li>
+                            <li class="plan-price">$0</li>
+                            <li>Real-time chat</li>
+                            <li>30 Days</li>
+                            <li>Unlimited chats</li>
+                            <li>Files upload</li>
+                            <li>Chat transcript send by mail</li>
+							<li>Chat transcript print</li>
+							<li>Chats archive</li>
+							<li>Users blocking</li>
+							<li>Visits tracking</li>
+							<li>Online users map</li>
+							<li>Chats statistic generation, top chats</li>
+							<li>Resume chat after user closed chat</li>
+							<li>All chats in single window with tabs interface</li>
+							<li>Option to prefill form fields</li>
+							<li>Option to send transcript to users e-mail</li>
+							<li>Online users tracking, including geo detection</li>
+							<li>Windows, Linux and Mac native applications.</li>
+							<li>Sounds on pending chats and new messages</li>
+							<li>Option for operator set online or offline mode</li>
+							<li>Option to see what user is typing before he sends a message</li>
+							<li style="font-weight:bold;font-size:19px;color:#777;">and much more lots...</li>
+                            <li class="plan-action"><a href="<?=base_url()?>signup" class="btn btn-primary btn-lg">Signup</a></li>
                         </ul>
                     </div><!--/.col-sm-4-->
                     <div class="col-sm-4">
                         <ul class="plan">
-                            <li class="plan-name">Advanced</li>
+                            <li class="plan-name">Premium</li>
+                            <li class="plan-price">$49</li>
+                            <li>Real-time chat</li>
+                            <li>60 Days</li>
+                            <li>Unlimited chats</li>
+                            <li>Files upload</li>
+                            <li>Chat transcript send by mail</li>
+							<li>Chat transcript print</li>
+							<li>Chats archive</li>
+							<li>Users blocking</li>
+							<li>Visits tracking</li>
+							<li>Online users map</li>
+							<li>Chats statistic generation, top chats</li>
+							<li>Resume chat after user closed chat</li>
+							<li>All chats in single window with tabs interface</li>
+							<li>Option to prefill form fields</li>
+							<li>Option to send transcript to users e-mail</li>
+							<li>Online users tracking, including geo detection</li>
+							<li>Windows, Linux and Mac native applications.</li>
+							<li>Sounds on pending chats and new messages</li>
+							<li>Option for operator set online or offline mode</li>
+							<li>Option to see what user is typing before he sends a message</li>
+							<li style="font-weight:bold;font-size:19px;color:#777;">and much more lots...</li>
+                            <li class="plan-action"><a href="<?=base_url()?>signup" class="btn btn-primary btn-lg">Signup</a></li>
+                        </ul>
+                    </div><!--/.col-sm-4-->
+                    <div class="col-sm-4">
+                        <ul class="plan">
+                            <li class="plan-name">Enterprise</li>
                             <li class="plan-price">$199</li>
-                            <li>30GB Storage</li>
-                            <li>5GB RAM</li>
-                            <li>5TB Bandwidth</li>
-                            <li>1000 Email Address</li>
-                            <li>Forum Support</li>
-                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Signup</a></li>
+                            <li>Real-time chat</li>
+                            <li>1 year</li>
+                            <li>Unlimited chats</li>
+                            <li>Files upload</li>
+                            <li>Chat transcript send by mail</li>
+							<li>Chat transcript print</li>
+							<li>Chats archive</li>
+							<li>Users blocking</li>
+							<li>Visits tracking</li>
+							<li>Online users map</li>
+							<li>Chats statistic generation, top chats</li>
+							<li>Resume chat after user closed chat</li>
+							<li>All chats in single window with tabs interface</li>
+							<li>Option to prefill form fields</li>
+							<li>Option to send transcript to users e-mail</li>
+							<li>Online users tracking, including geo detection</li>
+							<li>Windows, Linux and Mac native applications.</li>
+							<li>Sounds on pending chats and new messages</li>
+							<li>Option for operator set online or offline mode</li>
+							<li>Option to see what user is typing before he sends a message</li>
+							<li style="font-weight:bold;font-size:19px;color:#777;">and much more lots...</li>
+                            <li class="plan-action"><a href="<?=base_url()?>signup" class="btn btn-primary btn-lg">Signup</a></li>
                         </ul>
                     </div><!--/.col-sm-4-->
                 </div> 
@@ -233,64 +289,25 @@
         <div class="container">
             <div class="box">
                 <div class="center">
-                    <h2>Meet the Team</h2>
-                    <p class="lead">Pellentesque habitant morbi tristique senectus et netus et<br>malesuada fames ac turpis egestas.</p>
+                    <h2>About Us</h2>
+                    <p class="lead">We are here to increase your website's visitors and convert them into your customers.<br/>Who we are ?</p>
                 </div>
-                <div class="gap"></div>
-                <div id="team-scroller" class="carousel scale">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team1.jpg" alt="" ></p>
-                                        <h3>Agnes Smith<small class="designation">CEO &amp; Founder</small></h3>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team2.jpg" alt="" ></p>
-                                        <h3>Donald Ford<small class="designation">Senior Vice President</small></h3>
-                                    </div>
-                                </div>        
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team3.jpg" alt="" ></p>
-                                        <h3>Karen Richardson<small class="designation">Assitant Vice President</small></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team3.jpg" alt="" ></p>
-                                        <h3>David Robbins<small class="designation">Co-Founder</small></h3>
-                                    </div>
-                                </div>   
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team1.jpg" alt="" ></p>
-                                        <h3>Philip Mejia<small class="designation">Marketing Manager</small></h3>
-                                    </div>
-                                </div>     
-                                <div class="col-sm-4">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="<?=public_path()?>images/team2.jpg" alt="" ></p>
-                                        <h3>Charles Erickson<small class="designation">Support Manager</small></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left-arrow" href="#team-scroller" data-slide="prev">
-                        <i class="icon-angle-left icon-4x"></i>
-                    </a>
-                    <a class="right-arrow" href="#team-scroller" data-slide="next">
-                        <i class="icon-angle-right icon-4x"></i>
-                    </a>
-                </div><!--/.carousel-->
+                <div class="gap">
+					<p class="abtUs">
+					'Dx Group' is small and one of the best organization which representing their knowledge in front of world.</p>
+
+					<p class="abtUs">Dx Group is the current leader in online chat product for your valuable users. It is an online chatting support that has very loyal customers  and welcomes all new users from all over the world.</p>
+					<p class="abtUs">Started in the fall of 2015 as a hosted chat product targeted for general public, the site has quickly grown into one of the largest chat product on the Internet today. We have some of the most loyal customers are using on the Net today! Most of our users are from the USA, Canada, Australia, United Kingdom And India.Still we are searching clients from other countries who can get benefits by our product and Increase their revenue.</p>
+
+				<p class="abtUs">As we have come to known, the rise of best customer support on your site using our product. What makes our chat support product particularly unique is it offers instant connection with other users from around the world. There is no need to send a message and wait days for a reply. Connect instantly and talk in real time!</p>
+
+				<p class="abtUs">It is also providing file sending between valued user and website owner to know issue or suggestion from user side and give the fast,reliable & best support.</p>
+
+				<p class="abtUs">This site has been upgraded to use the latest nodeJs and socket technology. However that is the past and we are the future. Simply put, we will always use the best support software packages available on the market today. In order to participate in the regular support. Please visit the Technical support FAQ's section of this site if you are experiencing any problems connecting.</p>
+
+				<p class="abtUs" style="font-style:italic;">#1 Chat Avenue is a great way to meet valued users through online chat support interaction and give them 24/7 support.</p>
+				<p class="abtUs" style="font-style:italic;">The #1 Chat Avenue team is committed to making your chat experience a great one. Please add this site to your "Favorites" and visit often. Also, be sure to tell all your friends about our wonderful community.</p>
+				</div>
             </div><!--/.box-->
         </div><!--/.container-->
     </section><!--/#about-us-->
@@ -301,28 +318,28 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h1>Contact Form</h1>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p>Get in touch with us.We would love to hear whatever you say. You can send us comments, bugs, feature requests and praises.</p>
                         <div class="status alert alert-success" style="display: none"></div>
                         <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Name">
+                                        <input type="text" class="form-control" required="required" placeholder="Your Name Please.." id="txtContactName" name="txtContactName">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Email address">
+                                        <input type="text" class="form-control" required="required" placeholder="Email address" id="txtContactEmail" name="txtContactEmail">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message" ></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                                        <button type="submit" class="btn btn-danger btn-lg" id="btnContactMessageSend">Send Message</button>
                                     </div>
                                 </div>
                             </div>
@@ -348,19 +365,19 @@
                                 </address>
                             </div>
                         </div>
-                        <h1>Connect with us</h1>
+                        <h1>Let's Make Social Connection </h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="social">
                                     <li><a href="#"><i class="icon-facebook icon-social"></i> Facebook</a></li>
-                                    <li><a href="#"><i class="icon-google-plus icon-social"></i> Google Plus</a></li>
-                                    <li><a href="#"><i class="icon-pinterest icon-social"></i> Pinterest</a></li>
+									<li><a href="#"><i class="icon-twitter icon-social"></i> Twitter</a></li>
+                                    <!--<li><a href="#"><i class="icon-google-plus icon-social"></i> Google Plus</a></li>
+                                    <li><a href="#"><i class="icon-pinterest icon-social"></i> Pinterest</a></li>-->
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul class="social">
                                     <li><a href="#"><i class="icon-linkedin icon-social"></i> Linkedin</a></li>
-                                    <li><a href="#"><i class="icon-twitter icon-social"></i> Twitter</a></li>
                                     <li><a href="#"><i class="icon-youtube icon-social"></i> Youtube</a></li>
                                 </ul>
                             </div>
