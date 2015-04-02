@@ -27,8 +27,8 @@ class Dashboard extends CI_Controller {
 
             if ($this->form_validation->run()) {
                 # update password
-                $data = array('password' => md5(trim($post['password'])));
-                $ret = $this->common_model->updateData('users', $data, 'id = ' . $this->front_session['id']);
+                $data = array('u_password' => md5(trim($post['password'])));
+                $ret = $this->common_model->updateData('users', $data, 'u_id = ' . $this->front_session['u_id']);
 
                 if ($ret > 0) {
                     $flash_arr = array('flash_type' => 'success',

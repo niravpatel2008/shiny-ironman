@@ -31,14 +31,14 @@ class Index extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
             if ($this->form_validation->run()) {
-                $where = array('email' => $post['email'],
-                    'password' => md5(trim($post['password']))
+                $where = array('u_email' => $post['email'],
+                    'u_password' => md5(trim($post['password']))
                 );
                 $user = $this->common_model->selectData('users', '*', $where);
                 if (count($user) > 0) {
                     # create session
-                    $data = array('id' => $user[0]->id,
-                        'email' => $user[0]->email
+                    $data = array('u_id' => $user[0]->u_id,
+                        'u_email' => $user[0]->u_email
                     );
                     $this->session->set_userdata('front_session', $data);
                     redirect("dashboard");
@@ -69,25 +69,25 @@ class Index extends CI_Controller {
 		if ($post) {
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			if ($this->form_validation->run()) {
-				$where = array('email' => $post['email']);
+				$where = array('u_email' => $post['email']);
 
 				$user = $this->common_model->selectData('users', '*', $where);
                 if (count($user) > 0)
 				{
                     # update user pwd
-                    $data = array('id' => $user[0]->id,
-                        'email' => $user[0]->email
+                    $data = array('u_id' => $user[0]->id,
+                        'u_email' => $user[0]->email
                     );
 					$newpassword = random_string('alnum', 8);
-					$data = array('password' => md5($newpassword));
+					$data = array('u_password' => md5($newpassword));
 					$upid = $this->common_model->updateData('users',$data,$where);
 					
 					## send mail
-					$login_details = array('email' => $user[0]->email,'password' => $newpassword);
+					$login_details = array('u_email' => $user[0]->email,'u_password' => $newpassword);
 					$emailTpl = $this->load->view('email_templates/forgot_password', '', true);
 
 					$search = array('{username}', '{password}');
-					$replace = array($login_details['email'], $login_details['password']);
+					$replace = array($login_details['u_email'], $login_details['u_password']);
 					$emailTpl = str_replace($search, $replace, $emailTpl);
 
 					$ret = sendEmail($user[0]->email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);

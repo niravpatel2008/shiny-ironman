@@ -73,7 +73,7 @@
                     </ul>
 					<div style="clear:both;"></div>
 					<ul class="nav">
-						<?php if(isset($this->front_session) && $this->front_session['id'] > 0) { ?>
+						<?php if(isset($this->front_session) && $this->front_session['u_id'] > 0) { ?>
 						<li class="lw120"><a href="<?=base_url()?>dashboard/">Dashboard</a></li>
 						<li class="lw120"><a href="<?=base_url()?>dashboard/change_password" >Change Password</a></li>
 						<li class="lw120"><a href="<?=base_url()?>index/signout/" >Log Out</a></li>
