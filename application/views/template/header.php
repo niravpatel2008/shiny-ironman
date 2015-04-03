@@ -62,30 +62,28 @@
                     <a class="navbar-brand" href="<?=base_url();?>"></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
+						<?php if(isset($this->front_session) && $this->front_session['u_id'] > 0) { ?>
+						<ul class="nav navbar-nav">
+						<li class=""><a href="<?=base_url()?>dashboard/">Dashboard</a></li>
+						<li class=""><a href="<?=base_url()?>dashboard/#purchasePlan">My Plan</a></li>
+						</ul>
+						<div class="signup-btn">
+						<a href="<?=base_url()?>dashboard/change_password" >Change Password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?=base_url()?>index/signout/" >Log Out</a>
+						</div>
+						<?php }else{?>
+						<ul class="nav navbar-nav">
                         <li class="active"><a href="<?=base_url()?>#main-slider"><i class="icon-home"></i></a></li>
                         <li><a href="<?=base_url()?>#services">Services</a></li>
                         <li><a href="<?=base_url()?>#portfolio">Portfolio</a></li>
                         <li><a href="<?=base_url()?>#pricing" >Pricing</a></li>
                         <li><a href="<?=base_url()?>#about-us">About Us</a></li>
                         <li><a href="<?=base_url()?>#contact">Contact</a></li>
-						
-                    </ul>
-					<div style="clear:both;"></div>
-					<ul class="nav">
-						<?php if(isset($this->front_session) && $this->front_session['u_id'] > 0) { ?>
-						<li class="lw120"><a href="<?=base_url()?>dashboard/">Dashboard</a></li>
-						<li class="lw120"><a href="<?=base_url()?>dashboard/change_password" >Change Password</a></li>
-						<li class="lw120"><a href="<?=base_url()?>index/signout/" >Log Out</a></li>
-						<?php }else{?>
-						<li class="lw120">
-							<a href="<?=base_url()?>signin">Login</a>
-						</li>
-						<li class="lw120">
-							<a href="<?=base_url()?>signup">Sign Up</a>
-						</li>
+						</ul>
+						<div class="signup-btn">
+						<a href="<?=base_url()?>signin">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?=base_url()?>signup">Sign Up</a>
+						</div>
 						<?php }?>
-					</ul>
+					
                 </div>
             </div>
         </div>
