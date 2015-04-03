@@ -64,7 +64,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?=base_url()?>#main-slider"><i class="icon-home"></i></a></li>
-                        <li><a href="<?=base_url()?>#services">Services</a></li>
+                        <li><a href="<?=base_url()?>#services">Features</a></li>
                         <li><a href="<?=base_url()?>#portfolio">Portfolio</a></li>
                         <li><a href="<?=base_url()?>#pricing" >Pricing</a></li>
                         <li><a href="<?=base_url()?>#about-us">About Us</a></li>

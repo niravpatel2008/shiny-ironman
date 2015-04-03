@@ -31,51 +31,96 @@
 
     <section id="services">
         <div class="container">
-            <div class="box first">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
+            <div class="box first" style="background-color: #F7F7F7;">
+                <div class="row" style="margin:0 5px;">
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-apple icon-md icon-color1"></i>
-                            <h4>iOS development</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <h4>Useful features</h4>
+                            <ul class="serviceUl">
+								<li>Multilanguage</li>
+								<li>Mobile friendly</li>
+								<li>Files upload</li>
+								<li>Multiple chats same time</li>
+								<li>Resume chat</li>
+								<li>Smiles and few other hidden features</li>
+								<li>Dekstop client supports HTTPS</li>
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-android icon-md icon-color2"></i>
-                            <h4>Android development</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <h4>Fast and reliable</h4>
+                            <ul class="serviceUl">
+								<li>Easy setup and moderation</li>
+								<li>Mobile friendly</li>
+								<li>Links recognition</li>
+								<li>Online users map</li>
+								<li>Flexible permission system</li>
+								<li>No third parties cookies dependency</li>
+								<li>Chat search</li>
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-windows icon-md icon-color3"></i>
-                            <h4>Windows Phone development</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <h4>User Interface & Enhanced Features</h4>
+                            <ul class="serviceUl">
+								<li>XML, JSON export module</li>
+								<li>Support for custom extensions</li>
+								<li>Chats archive</li>
+								<li>Chat transcript print</li>
+								<li>Chat transcript send by mail</li>
+								<li>Chats transfering</li>
+								<li>Option to see what user is typing before he sends a message</li>
+
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-html5 icon-md icon-color4"></i>
-                            <h4>Ruby on Rails development</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <!--<i class="icon-html5 icon-md icon-color4"></i>-->
+                            <h4>Design</h4>
+                            <ul class="serviceUl">
+								<li>Easy setup and moderation</li>
+								<li>Mobile friendly</li>
+								<li>set online or offline mode.</li>
+								<li>Visits tracking</li>
+								<li>Time spent on site</li>
+								<li>Modern design and interface</li>
+								<li>Adjustable width and height</li>
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-css3 icon-md icon-color5"></i>
-                            <h4>Javascript development</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <h4>Lightweight and compatible</h4>
+                            <ul class="serviceUl">
+								<li>Lightweight & smoother performance</li>
+								<li>Top performance with enabled cache</li>
+								<li>Canned messages</li>
+								<li>GEO detection using three different sources</li>
+								<li>Runs perfectly on PCs, tablets and mobile devices</li>
+								<li>Compatibile with all modern browsers</li>
+								<li>Advanced load balancing system</li>
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
-                            <i class="icon-thumbs-up icon-md icon-color6"></i>
-                            <h4>Responsive web design</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                            <h4>Customizable Settings</h4>
+                            <ul class="serviceUl">
+								<li>Option to take website screenshot see what user see</li>
+								<li>Resume chat after user closed chat</li>
+								<li>Sounds on pending chats and new messages</li>
+								<li>configure frequency for pro active chat invitation message.</li>
+								
+							</ul>
                         </div>
-                    </div><!--/.col-md-4-->
+                    </div>
                 </div><!--/.row-->
+
+				
+
             </div><!--/.box-->
         </div><!--/.container-->
     </section><!--/#services-->
@@ -290,7 +335,7 @@
             <div class="box">
                 <div class="center">
                     <h2>About Us</h2>
-                    <p class="lead">We are here to increase your website's visitors and convert them into your customers.<br/>Who we are ?</p>
+                    <p class="lead">We are here to convert your visitors to your customers. Make Your Customers your Friend and Enjoy our services & fun together.<br/>Who we are ?</p>
                 </div>
                 <div class="gap">
 					<p class="abtUs">
