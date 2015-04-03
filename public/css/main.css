@@ -650,3 +650,45 @@ textarea#message {
     -o-transform: scale(1);
   }
 }
+/********** Add by Sanjay *********/
+.signup-btn{
+float:right;
+}
+.welcome{
+padding:1px;
+background: #258dc8; /* Old browsers */
+background: -moz-linear-gradient(top,  #258dc8 0%, #258dc8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#258dc8), color-stop(100%,#258dc8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #258dc8 0%,#258dc8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+
+}
+.welcome h3{
+color:#FFFFFF;
+margin-top:10px;
+}
+#dashboard
+{
+color:#000000;
+}
+.code {
+margin-top:20px;
+}
+.code textarea{
+font-size:12px;
+}
+.code p{
+padding:5px;
+}
+.right-tic{
+list-style-image: url('../images/right-icon.png');
+}
+.right-tic li{
+padding:5px;
+}
+#purchasePlan .box{
+background:#f3f3f3;
+}
