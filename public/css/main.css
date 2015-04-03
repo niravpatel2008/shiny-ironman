@@ -172,6 +172,18 @@ a:focus {
 .box.last {
   border-radius: 0 0 5px 5px;
 }
+.featuresBox{
+background-color: #fff;
+  max-height: 340px;
+  max-width: 335px;
+  min-height:280px;
+  margin:0 10px;
+  border-radius:25px;
+  font-size:15px;
+}
+.featuresBox h4
+{padding:15px 0 8px 0;}
+.serviceUl{text-align:left;}
 .box h2 {
   padding: 10px 30px;
   display: inline-block;
