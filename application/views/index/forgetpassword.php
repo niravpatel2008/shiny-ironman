@@ -10,9 +10,9 @@ echo $flash_arr['flash_msg'];
 				<h2>Forget password</h2>
 
 				<label for="email">Email</label>
-				<input type="text" name="email" placeholder="enter your email..." class="validate[required,custom[email]]" id="email" value="<?= set_value('email'); ?>" ><?= form_error('email') ?>
+				<input type="text" name="email" placeholder="enter your email..." class="validate[required,custom[email]] allow-enter" id="email" value="<?= set_value('email'); ?>" ><?= form_error('email') ?>
 
-				<button type="button" class="btn btn-primary btn-lg"  id="btnForgetPwd" name="btnForgetPwd" title="Forget Password" onclick="javascript:userSignup('frmForgetPwd');">Submit</button>
+				<button type="button" class="btn btn-primary btn-lg sumitbtn"  id="btnForgetPwd" name="btnForgetPwd" title="Forget Password" onclick="javascript:userSignup('frmForgetPwd');">Submit</button>
 			</form>
 		</div>
 	</div>

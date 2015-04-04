@@ -7,7 +7,6 @@ class Dashboard extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-
         $this->front_session = $this->session->userdata('front_session');
         is_front_login();
     }

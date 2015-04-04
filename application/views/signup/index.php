@@ -5,7 +5,7 @@
 		
 		<div class="register span6">
 			<!--<form action="" method="post">-->
-			<form id="frmSignup" name="frmSignup" method="post">
+			<form id="frmSignup" name="frmSignup" method="post" accept-charset="UTF-8">
 				<h2>REGISTER</h2>
 				<label for="firstname"><span class="red">* </span>First Name</label>
 				<input type="text" placeholder="enter your first name..." name="fname" id="fname" value="<?= set_value('fname'); ?>" class="validate[required]"><?= my_form_error('fname') ?>
@@ -13,7 +13,7 @@
 				<label for="lastname"><span class="red">* </span>Last Name</label>
 				<input type="text" placeholder="enter your first name..." name="lname" class="validate[required]" id="lname" value="<?= set_value('lname'); ?>" ><?= my_form_error('lname') ?>
 				
-				<label for="email"><span class="red">* </span>Email</label>
+				<label for="email"><span class="red">* </span>Email<span style="font-size:10px;color:#777;"> (email must be unique)</span></label>
 				<input type="text" name="email" placeholder="enter your email..." class="validate[required,custom[email]]" id="email" value="<?= set_value('email'); ?>" ><?= my_form_error('email') ?>
 
 				<label for="password"><span class="red">* </span>Password</label>
@@ -25,10 +25,12 @@
 				<label for="phone">Phone</label>
 				<input type="text" placeholder="enter your phone no..." name="phone" id="phone" value="<?= set_value('phone'); ?>" maxlength="12"><?= my_form_error('phone') ?>
 
-				<label for="website"><span class="red">* </span>Website</label>
+				<label for="website"><span class="red">* </span>Website
+				<span style="font-size:10px;color:#777;"> (website must be unique)</span>
+				</label>
 				<input type="text" name="website" id="website" placeholder="enter your website..." class="validate[required,url]" value="<?= set_value('website'); ?>" ><?= my_form_error('website') ?>
 
-				<label for="subdomain"><span class="red">* </span>Enter Subdomain Name <span style="font-size:10px;color:#777;">(e.g.{subdomain}.chat.com)</span></label>
+				<label for="subdomain"><span class="red">* </span>Subdomain Name <span style="font-size:10px;color:#777;">(e.g.{subdomain}.chat.com & it must be unique)</span></label>
 				<input type="text" name="subdomain" id="subdomain" placeholder="enter your subdomain prefix..." class="validate[required]" value="<?= set_value('subdomain'); ?>" ><?= my_form_error('subdomain') ?>
 
 				<label for="plan">Select Plan</label>
@@ -40,7 +42,7 @@
 				</select>
 
 				
-				<button type="button" class="btn btn-primary btn-lg"  id="btnRegUser" name="btnRegUser" title="Register" onclick="javascript:userSignup('frmSignup');">REGISTER</button>
+				<button type="submit" class="btn btn-primary btn-lg"  id="btnRegUser" name="btnRegUser" title="Register">REGISTER</button>
 			</form>
 		</div>
 	</div>

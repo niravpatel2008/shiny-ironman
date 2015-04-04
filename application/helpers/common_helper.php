@@ -120,9 +120,9 @@
 	function getPackages()
 	{
 		$packageArr = array();
-		$packageArr[]=array('id'=>1,'name'=>'Free','price'=>0,'duration'=>'1 Month');
-		$packageArr[]=array('id'=>2,'name'=>'Premium','price'=>99,'duration'=>'6 Months');
-		$packageArr[]=array('id'=>3,'name'=>'Enterprise','price'=>199,'duration'=>'1 Year');
+		$packageArr[1]=array('id'=>1,'name'=>'Free','price'=>0,'duration'=>'1 Month');
+		$packageArr[2]=array('id'=>2,'name'=>'Premium','price'=>99,'duration'=>'6 Months');
+		$packageArr[3]=array('id'=>3,'name'=>'Enterprise','price'=>199,'duration'=>'1 Year');
 		return $packageArr;
 	}
 ?>
