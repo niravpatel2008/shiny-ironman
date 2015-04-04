@@ -40,7 +40,7 @@
                         <div class="center">
                             <i class="icon-magic icon-md icon-color5"></i>
                             <h4>1 Minute Set up </h4>
-                            <p>Very easy to use.It tale less then 1 min.You just copy past small code and start to grow your business.</p>
+                            <p>Very easy to use.It take less then 1 min.You just copy past small code and start to grow your business.</p>
                         </div>
                     </div><!--/.col-md-4-->
 				   <div class="col-md-4 col-sm-6">
@@ -54,14 +54,14 @@
                         <div class="center">
                             <i class="icon-legal icon-md icon-color2"></i>
                             <h4>Customizable Widget</h4>
-                            <p>Use fully customizable widgets to enhance your customers’ overall chat and web experience.You can set field as per requirement.</p>
+                            <p>Use fully customizable widgets to enhance your customers overall chat and web experience.You can set fields as per requirement.</p>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-time icon-md icon-color3"></i>
                             <h4>24 x 7 Agent</h4>
-                            <p>You can give 24 x 7 good support to your customers and solving problems.</p>
+                            <p>You can give good support by 24 x 7 to your customers and solving problems.</p>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
@@ -89,14 +89,14 @@
                         <div class="center">
                             <i class="icon-globe icon-md icon-color8"></i>
                             <h4>Geo Profile</h4>
-                            <p>Gain a better perspective of customers’ needs, through Customer Geo Profile, while offering services.You van improve world wide business.</p>
+                            <p>Gain a better perspective of customers needs, through Customer Geo Profile, while offering services.You can improve world wide business.</p>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-camera icon-md icon-color9"></i>
                             <h4>Screenshot Capture</h4>
-                            <p>You can capture screen of customer you customer.This is best way give response without customer's explanation.</p>
+                            <p>You can capture screen of customer's computer.This is best way give response without customer's explanation.</p>
                         </div>
                     </div><!--/.col-md-4-->
 					<div class="center gap">

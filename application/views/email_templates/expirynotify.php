@@ -56,28 +56,23 @@
 						<td valign="top" style="padding-top:9px;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#606060;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left">
 
 						<h1 style="margin:0;padding:0;display:block;font-family:Helvetica;font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:-1px;text-align:left;color:#606060!important">
-							<span style="color:#ff5f00">A warm welcome!</span>
+							<span style="color:#ff5f00">You Might be going to Lost Your Account!</span>
 						</h1>
-						<h3 style="margin:0;padding:0;display:block;font-family:Helvetica;font-size:18px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:-.5px;text-align:left;color:#606060!important">Thank you for trusting chat.ezcell.in.</h3>
+						
 						<p style="margin:1em 0;padding:0;color:#606060;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left">
-							<span style="color:#666666">Hello {$name},<br/>
+							<span style="color:#666666">Dear {$name},<br/>
 							<br/>
-							Thank you for creating your new </span><span style="color:#ff5f00">'<b>Membership'</b></span><span style="color:#666666">&nbsp;account with Smith &amp; Associates Real Estate!&nbsp;<span style="font-family:arial,sans-serif;line-height:normal">We consider our account holders to&nbsp;be our VIP guests, and have a reliable Live Chat App available to help you with any questions or requests.</span><br/>
+							Thank you for use our Services upto now and we belive that you enjoyed it a lot and also in future as well. </span>This is inform you that your Account is due to expire in <span style="color:#ff5f00">'<b>Next 30 days. '</b></span><span style="font-family:arial,sans-serif;line-height:normal">To ensure the Account does not expire, you should renew it now. You can do this from the Account management section by Login your admin panel here</span><br/>
 							<br/>
-							Take a look around!&nbsp;Add a Code to Your webpage.Save & Upload Webpages to your website.That's It!! If you have questions while you explore, just let us know.&nbsp;We're here to help!<br/>
+							Should you allow this well going account to expire? you will be able to renew it for up to 30 days after the renewal date. During this time, the account will not be accessible so any chat associated with it will stop working. 30 days after ewnewal date, Your chat history will be removed automatically from our server if you not renew your account.<br/>
 							<br/>
-							<span style="color:#666666">Following is your Login Information :</span>
+							
 							<br/>
-							<b>Username:</b>&nbsp;{username}&nbsp;<br/>
-							<b>Password:</b>&nbsp;{password}<br/><br/>
+							
 							<span style="color:#606060 !important;font-weight:bold;">
-								STEPS TO SETUP LIVE CHAT ON YOUR WEBSITE:
+								Hope to Get Back from you Soon !!
 							</span><br/>
-							<br/>
-							1. Visit <b><a href="https://chat.ezcell.in/admin/" target="_blank" style="color:#606060;">https://chat.ezcell.in/admin/</a></b> and Login with your credentials.<br/>
-							2. Get Your Code from site . Copy & Place that codes in Your Webpage.<br/>
-							3. You can Track & Monitor Your visitors activity and extra custom activities through your login panel.
-							<br/><br/>
+							
 							<span style="color:#666666">Sincerely,<br/>
 							{$agentBrokerName}</span>
 						</p>

@@ -10,7 +10,10 @@ class Signup extends CI_Controller {
     }
 
     public function index() {
-        //if ($id > 0) {	
+        //if ($id > 0) {
+			/*$data = array('u_subdomain'=>'neo');
+			$this->common_model->setupApplication($data);*/
+			
             $post = $this->input->post();
             if ($post) {
                 $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
@@ -56,18 +59,29 @@ class Signup extends CI_Controller {
                     $this->session->set_userdata('front_session', $data);
 
                     if ($ret > 0) {
-						$this->common_model->setupApplication($insert_data); // create database for chat 
-                        $flash_arr = array('flash_type' => 'success',
+						$this->common_model->setupApplication($insert_data);
+						$flash_arr = array('flash_type' => 'success',
                             'flash_msg' => 'Welcome to DX chat.'
                         );
+						$retFlg = 1;
                     } else {
                         $flash_arr = array('flash_type' => 'error',
                             'flash_msg' => 'An error occurred while processing.'
                         );
+						$retFlg = 0;
                     }
                     $this->session->set_flashdata('flash_arr', $flash_arr);
-                    redirect(base_url() . "dashboard");
+					echo $retFlg;
+					exit;
+                    //redirect(base_url() . "dashboard");
                 }
+				else
+				{
+					$retFlg = -1;
+					//print_r($this->form_validation);die;
+					echo $retFlg;
+					exit;
+				}
             }
 			
            // $data['view'] = "signup";

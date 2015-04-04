@@ -32,9 +32,9 @@ jQuery(function($) {
 	})
 
 	//PrettyPhoto
-	$("a.preview").prettyPhoto({
-		social_tools: false
-	});
+	//$("a.preview").prettyPhoto({
+	//	social_tools: false
+	//});
 
 	//Isotope
 	$(window).load(function(){
@@ -52,4 +52,10 @@ jQuery(function($) {
 			return false;
 		});
 	});
+	$('.allow-enter').keydown(function(e){
+		 if (e.which == 13) {
+			var $targ = $(e.target).closest("form");
+			$targ.find(".sumitbtn").focus();
+		}	
+	})
 });

@@ -2,7 +2,9 @@
 //echo '<pre>';print_r($this->session->userdata['front_session']);
 //print_r($this->front_session);
 $flash_arr = $this->session->flashdata('flash_arr');
-echo $flash_arr['flash_msg'];
+//echo $flash_arr['flash_msg'];
+$packageArr = getPackages();
+
 ?>
 
 <section id="dashboard">
@@ -21,16 +23,16 @@ echo $flash_arr['flash_msg'];
 					<b> Your account url :</b><a href="abc.chat.com" target="_blank"><?php echo $user->u_subdomain?>.chat.com</a>
 				</div>
 				<div class="col-md-12">
-					<b> Username :</b> <?php echo $user->u_subdomain?>
+					<b> Username :</b> <?php echo $user->u_email;?>
 				</div>
 				<div class="col-md-12">
-					<b> Your Plan :</b> Premium
+					<b> Your Plan :</b> <?=$packageArr[$user->u_package_id]['name']?>
 				</div>
 				<div class="col-md-12">
 					<b> Plan Expiry date :</b> <?php echo $user->u_package_expiry_date?>
 				</div>
 				<div class="col-md-11 code">
-			<p>Copy the code from the text area to the page where you want your status to appear</p>
+			<p>Copy the code from the below textarea to the page where you want your status to appear</p>
 			<textarea name="chatcode" rows="14" class="form-control" id="chatcode"><script type="text/javascript">
 var LHCChatOptions = {};
 LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
