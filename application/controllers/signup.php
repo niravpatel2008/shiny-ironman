@@ -59,6 +59,7 @@ class Signup extends CI_Controller {
                     $this->session->set_userdata('front_session', $data);
 
                     if ($ret > 0) {
+
 						//$this->common_model->setupApplication($insert_data);
                         $flash_arr = array('flash_type' => 'success',
                             'flash_msg' => 'Welcome to DX chat.'
