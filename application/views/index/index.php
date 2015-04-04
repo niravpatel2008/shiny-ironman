@@ -32,7 +32,76 @@
     <section id="services">
         <div class="container">
             <div class="box first" style="background-color: #F7F7F7;">
+				 <div class="center gap">
+                    <h3>Key Services</h3>
+                </div><!--/.center-->
                 <div class="row" style="margin:0 5px;">
+					 <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-magic icon-md icon-color5"></i>
+                            <h4>1 Minute Set up </h4>
+                            <p>Very easy to use.It tale less then 1 min.You just copy past small code and start to grow your business.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+				   <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-globe icon-md icon-color1"></i>
+                            <h4>Real-time Visitor Tracking</h4>
+                            <p>Convert visitors into customers by tracking them real-time on your web pages.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-legal icon-md icon-color2"></i>
+                            <h4>Customizable Widget</h4>
+                            <p>Use fully customizable widgets to enhance your customers’ overall chat and web experience.You can set field as per requirement.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-time icon-md icon-color3"></i>
+                            <h4>24 x 7 Agent</h4>
+                            <p>You can give 24 x 7 good support to your customers and solving problems.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-sitemap icon-md icon-color4"></i>
+                            <h4>Advanced Chat Routing</h4>
+                            <p>Right chat to the right agent ensures that customers get the answers that they are looking for and get quick reply.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-retweet icon-md icon-color6"></i>
+                            <h4>Chat Transfer</h4>
+                            <p>Promote collaboration. Transfer the chat to another agent who can solve the issue in the same session.This is saving customer's time.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+					<div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-file icon-md icon-color7"></i>
+                            <h4>File Transfer</h4>
+                            <p>Share files with your customers.So you can give quick and proper solution.You don't need more explanation of issue.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-globe icon-md icon-color8"></i>
+                            <h4>Geo Profile</h4>
+                            <p>Gain a better perspective of customers’ needs, through Customer Geo Profile, while offering services.You van improve world wide business.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-camera icon-md icon-color9"></i>
+                            <h4>Screenshot Capture</h4>
+                            <p>You can capture screen of customer you customer.This is best way give response without customer's explanation.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+					<div class="center gap">
+						<h3>All Services</h3>
+					</div><!--/.center-->
                     <div class="col-md-4 col-sm-6 featuresBox">
                         <div class="center">
                             <h4>Useful features</h4>
@@ -129,8 +198,8 @@
         <div class="container">
             <div class="box">
                 <div class="center gap">
-                    <h2>Portfolio</h2>
-                    <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac<br>turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                   <h2>Powerful Agent Panel</h2>
+                    <p class="lead">Empower your customer support with the help of helpdesk integrations with your site.</p>
                 </div><!--/.center-->
                 <ul class="portfolio-filter">
                     <li><a class="btn btn-primary active" href="#" data-filter="*">All</a></li>
@@ -236,8 +305,9 @@
         <div class="container">
             <div class="box">
                 <div class="center">
-                    <h2>See our Pricings</h2>
-                    <p class="lead">We are turn your visitors into customers throgh your Support.Let's Join Us and Enjoy our Service.</p>
+                     <h2>Pricings</h2>
+                    <p class="lead">We are turn your visitors into your new customers – Lets Chat!.</p>
+                    <p class="lead">Track and engage visitors to increase sales, improve conversions and give higher customer satisfaction</p>
                 </div><!--/.center-->   
                 
                 <div id="pricing-table" class="row">
@@ -338,12 +408,9 @@
                     <p class="lead">We are here to convert your visitors to your customers. Make Your Customers your Friend and Enjoy our services & fun together.<br/>Who we are ?</p>
                 </div>
                 <div class="gap">
-					<p class="abtUs">
-					'Dx Group' is small and one of the best organization which representing their knowledge in front of world.</p>
-
-					<p class="abtUs">Dx Group is the current leader in online chat product for your valuable users. It is an online chatting support that has very loyal customers  and welcomes all new users from all over the world.</p>
-					<p class="abtUs">Started in the fall of 2015 as a hosted chat product targeted for general public, the site has quickly grown into one of the largest chat product on the Internet today. We have some of the most loyal customers are using on the Net today! Most of our users are from the USA, Canada, Australia, United Kingdom And India.Still we are searching clients from other countries who can get benefits by our product and Increase their revenue.</p>
-
+				<p class="abtUs">Our team is one of the best organization which representing their knowledge in front of world.</p>
+				<p class="abtUs">We are the current leader in online chat product for your valuable users. It is an online chatting support that has very loyal customers  and welcomes all new users from all over the world.</p>
+				<p class="abtUs">Started in the fall of 2015 as a hosted chat product targeted for general public, the site has quickly grown into one of the largest chat product on the Internet today. We have some of the most loyal customers are using on the Net today! Most of our users are from the USA, Canada, Australia, United Kingdom And India.Still we are searching clients from other countries who can get benefits by our product and Increase their revenue.</p>
 				<p class="abtUs">As we have come to known, the rise of best customer support on your site using our product. What makes our chat support product particularly unique is it offers instant connection with other users from around the world. There is no need to send a message and wait days for a reply. Connect instantly and talk in real time!</p>
 
 				<p class="abtUs">It is also providing file sending between valued user and website owner to know issue or suggestion from user side and give the fast,reliable & best support.</p>

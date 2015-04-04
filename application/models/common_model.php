@@ -134,5 +134,31 @@ class common_model extends CI_Model{
 	}
 
 
-
+	function setupApplication($data)
+	{
+		$path = realpath('./chat_db/master.sql');
+			 
+		$this->load->dbforge();
+		$dbname = $data['u_subdomain']."_chat";
+		if ($this->dbforge->create_database($dbname))
+		{
+			$lines = file($path, true);
+			$templine = "";
+			foreach ($lines as $line)
+			{
+				if (substr($line, 0, 2) == '--' || $line == '')
+					continue;
+			 
+				$templine .= $line;
+				if (substr(trim($line), -1, 1) == ';')
+				{
+					$this->db->query($templine);
+					echo $templine;
+					echo "<br>";
+					echo "<br>";
+					$templine = '';
+				}
+			}
+		}
+	}
 }
