@@ -1,12 +1,68 @@
 function userSignup(formId)
+{
+	var ret = $('#'+formId).validationEngine('validate');
+	if(ret)
 	{
-		var ret = $('#'+formId).validationEngine('validate');
+		$('#'+formId).submit();
+	}
+}
+function ajaxindicatorstop()
+{
+    $('#resultLoading .bg').height('100%');
+     $('#resultLoading').fadeOut(300);
+    $('body').css('cursor', 'default');
+}
+function ajaxindicatorstart(text)
+{
+	if($('body').find('#resultLoading').attr('id') != 'resultLoading'){
+		$('body').append('<div id="resultLoading" style="display:none"><div><img src="'+baseurl+'public/images/ajax-loader.gif"><div>'+text+'</div></div><div class="bg"></div></div>');
+	}
+	$('#resultLoading>div:first').css({
+		'width': '250px',
+		'height':'75px',
+		'text-align': 'center',
+		'position': 'fixed',
+		'top':'0',
+		'left':'0',
+		'right':'0',
+		'bottom':'0',
+		'margin':'auto',
+		'font-size':'16px',
+		'z-index':'10',
+		'color':'#ffffff'
+
+	});
+
+
+	$('#resultLoading .bg').height('100%');
+    $('#resultLoading').fadeIn(3000);
+    $('body').css('cursor', 'wait');
+}
+$(document).ready(function() {
+	$('#frmSignup').on('submit', function(e){
+		e.preventDefault();
+		var ret = $('#frmSignup').validationEngine('validate');
 		if(ret)
 		{
-			$('#'+formId).submit();
+			var url = baseurl+'signup/index';
+			var data = $("#frmSignup").serialize();
+			ajaxindicatorstart('we are setting up your account.. please wait..');
+		
+			$.post(url,data,function(e){
+					ajaxindicatorstop();
+					if(e == '1'){
+						alert("Account Successfully Created");
+						location.href=baseurl+'/dashboard';
+					}
+					else if(e == '-1'){
+						alert("Unique Value Required for Email / Website / Subdomain");
+					}
+					else{
+						alert('Error Occured..Please Try again');
+					}
+			});
 		}
-	}
-$(document).ready(function() {
+	});
 	//$("#frmSignup").validationEngine();
 	/*$('.register form').submit(function(){
         $(this).find("label[for='firstname']").html('First Name');
