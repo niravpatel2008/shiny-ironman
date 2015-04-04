@@ -142,6 +142,7 @@ class common_model extends CI_Model{
 		$dbname = $data['u_subdomain']."_chat";
 		if ($this->dbforge->create_database($dbname))
 		{
+			$this->db->query('use '.$dbname);
 			$lines = file($path, true);
 			$templine = "";
 			foreach ($lines as $line)
@@ -153,9 +154,9 @@ class common_model extends CI_Model{
 				if (substr(trim($line), -1, 1) == ';')
 				{
 					$this->db->query($templine);
-					echo $templine;
+					/*echo $templine;
 					echo "<br>";
-					echo "<br>";
+					echo "<br>";*/
 					$templine = '';
 				}
 			}

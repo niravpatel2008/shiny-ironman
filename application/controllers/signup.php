@@ -10,10 +10,7 @@ class Signup extends CI_Controller {
     }
 
     public function index() {
-        //if ($id > 0) {
-			/*$data = array('u_subdomain'=>'neo');
-			$this->common_model->setupApplication($data);*/
-			
+        //if ($id > 0) {	
             $post = $this->input->post();
             if ($post) {
                 $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
@@ -59,7 +56,7 @@ class Signup extends CI_Controller {
                     $this->session->set_userdata('front_session', $data);
 
                     if ($ret > 0) {
-						//$this->common_model->setupApplication($insert_data);
+						$this->common_model->setupApplication($insert_data); // create database for chat 
                         $flash_arr = array('flash_type' => 'success',
                             'flash_msg' => 'Welcome to DX chat.'
                         );
