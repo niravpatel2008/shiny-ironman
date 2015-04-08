@@ -68,12 +68,15 @@ else
                     <a class="navbar-brand" href="<?=base_url();?>"></a>
                 </div>
                 <div class="collapse navbar-collapse">
-						<?php if($isLogin == true){ ?>
+						<?php if($isLogin == true && $this->router->fetch_class() != 'index'){ ?>
 							<ul class="nav navbar-nav">
 							<li class=""><a href="<?=base_url()?>dashboard/">Dashboard</a></li>
 							<li class=""><a href="<?=base_url()?>dashboard/#purchasePlan">My Plan</a></li>
 							</ul>
+						<?php }?>
+						<?php if($isLogin == true ){?>
 						<div class="signup-btn">
+							<a href="<?=base_url()?>dashboard/">Dashboard</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 							<a href="<?=base_url()?>dashboard/change_password" >Change Password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?=base_url()?>index/signout/" >Log Out</a>
 						</div>
 						<?php }?>

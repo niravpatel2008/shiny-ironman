@@ -60,7 +60,7 @@
 						</h1>
 						
 						<p style="margin:1em 0;padding:0;color:#606060;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left">
-							<span style="color:#666666">Dear {$name},<br/>
+							<span style="color:#666666">Dear {name},<br/>
 							<br/>
 							This is to inform you about your successfull subscription renewal. your account has been updated and secure.You can continue your work with use of our service and your all records are safe & secure. </span>
 							<br/><br/><span style="font-family:arial,sans-serif;line-height:normal;color:#666666;">From time to time, we'll be keeping you update something new in our application and provide you much more better service than yesterday.</span><br/>
@@ -70,7 +70,7 @@
 							<br/>
 							
 							<span style="color:#666666">Sincerely,<br/>
-							{$agentBrokerName}</span>
+							{OrgName}</span>
 						</p>
 					</td>
 				</tr></tbody></table>
