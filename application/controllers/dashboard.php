@@ -17,7 +17,13 @@ class Dashboard extends CI_Controller {
 		$user = $this->common_model->selectData('users', '*', $where);
         $data['user'] = $user[0];
         $data['view'] = "index";
-        $this->load->view('content', $data);
+        $this->load->view('care/content', $data);
+    }
+	
+	 public function purchaseplan() {
+		
+        $data['view'] = "purchaseplan";
+        $this->load->view('care/content', $data);
     }
 
     public function change_password() {
@@ -50,7 +56,7 @@ class Dashboard extends CI_Controller {
         }
 
         $data['view'] = "change_password";
-        $this->load->view('content', $data);
+        $this->load->view('care/content', $data);
     }
 
 	public function plan_upgrade()
@@ -94,7 +100,7 @@ class Dashboard extends CI_Controller {
 		$data['user'] = $user[0];
 		$data['packages'] = getPackages();
         $data['view'] = "plan_upgrade";
-        $this->load->view('content', $data);	
+        $this->load->view('care/content', $data);	
 	}
 
 }
