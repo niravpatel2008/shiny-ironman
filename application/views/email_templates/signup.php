@@ -60,7 +60,7 @@
 						</h1>
 						<h3 style="margin:0;padding:0;display:block;font-family:Helvetica;font-size:18px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:-.5px;text-align:left;color:#606060!important">Thank you for trusting chat.ezcell.in.</h3>
 						<p style="margin:1em 0;padding:0;color:#606060;font-family:Helvetica;font-size:15px;line-height:150%;text-align:left">
-							<span style="color:#666666">Hello {$name},<br/>
+							<span style="color:#666666">Hello {name},<br/>
 							<br/>
 							Thank you for creating your new </span><span style="color:#ff5f00">'<b>Membership'</b></span><span style="color:#666666">&nbsp;account with Smith &amp; Associates Real Estate!&nbsp;<span style="font-family:arial,sans-serif;line-height:normal">We consider our account holders to&nbsp;be our VIP guests, and have a reliable Live Chat App available to help you with any questions or requests.</span><br/>
 							<br/>
@@ -79,7 +79,7 @@
 							3. You can Track & Monitor Your visitors activity and extra custom activities through your login panel.
 							<br/><br/>
 							<span style="color:#666666">Sincerely,<br/>
-							{$agentBrokerName}</span>
+							{OrgName}</span>
 						</p>
 					</td>
 				</tr></tbody></table>

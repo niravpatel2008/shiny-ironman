@@ -20,7 +20,7 @@ $packageArr = getPackages();
 				</div>
 				<h3>Account detail</h3>
 				<div class="col-md-12">
-					<b> Your account url :</b><a href="abc.chat.com" target="_blank"><?php echo $user->u_subdomain?>.chat.com</a>
+					<b> Your account url :</b><a href="http://<?php echo $user->u_subdomain?>.chat.com" target="_blank"> <?php echo $user->u_subdomain?>.chat.com</a>
 				</div>
 				<div class="col-md-12">
 					<b> Username :</b> <?php echo $user->u_email;?>
@@ -88,7 +88,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
                 </div> 
 				<div class="col-sm-2"></div>
 				<div class="col-sm-6">
-				<a href="#" class="btn btn-primary btn-lg">Upgrade your plan</a>
+				<a href="<?=base_url()?>dashboard/plan_upgrade/" class="btn btn-primary btn-lg">Upgrade your plan</a>
 				</div>
 				<div style="clear:both;"></div>
             </div> 

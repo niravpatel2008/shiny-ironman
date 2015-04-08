@@ -60,6 +60,18 @@ class Signup extends CI_Controller {
 
                     if ($ret > 0) {
 						$this->common_model->setupApplication($insert_data);
+						
+						## send mail
+						//$login_details = array('u_email' => $user[0]->email,'u_password' => $newpassword);
+						$userRes = $user[0];
+						$emailTpl = $this->load->view('email_templates/signup', '', true);
+
+						$search = array('{name}','{username}','{password}''{OrgName}');
+						$replace = array($post['fname']." ".$post['lname'],$post['email'],$post['password'],'ChatAdmin');
+						$emailTpl = str_replace($search, $replace, $emailTpl);
+
+						$ret = sendEmail($userRes->u_email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);
+
 						$flash_arr = array('flash_type' => 'success',
                             'flash_msg' => 'Welcome to DX chat.'
                         );
