@@ -8,8 +8,7 @@ $packageArr = getPackages();
 ?>
 
 <section id="dashboard">
-	<div class="container">
-		<div class="box">
+		<div class="box_care">
 			<div class="center welcome">
 				<h3>Welcome : <?php echo $user->u_fname." ".$user->u_lname; ?></h3>
 			</div>
@@ -53,45 +52,3 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 		</div><!--/.box-->
 	</div><!--/.container-->
 </section>
-<section id="purchasePlan">
-        <div class="container">
-            <div class="box">
-                <div class="center">
-                    <h2 style="color:#258dc8;">My Plan Detail</h2>
-                </div><!--/.center-->   
-                <div id="pricing-table" class="row">
-                   <div class="col-sm-1"></div>
-                    <div class="col-sm-6">
-                        <ul class="plan right-tic">
-                            <li class="plan-name">Premium</li>
-                            <li>Real-time chat</li>
-                            <li>Unlimited chats</li>
-                            <li>Files upload</li>
-                            <li>Chat transcript send by mail</li>
-							<li>Chat transcript print</li>
-							<li>Chats archive</li>
-							<li>Users blocking</li>
-							<li>Visits tracking</li>
-							<li>Online users map</li>
-							<li>Chats statistic generation, top chats</li>
-							<li>Resume chat after user closed chat</li>
-							<li>All chats in single window with tabs interface</li>
-							<li>Option to prefill form fields</li>
-							<li>Option to send transcript to users e-mail</li>
-							<li>Online users tracking, including geo detection</li>
-							<li>Windows, Linux and Mac native applications.</li>
-							<li>Sounds on pending chats and new messages</li>
-							<li>Option for operator set online or offline mode</li>
-							<li>Option to see what user is typing before he sends a message</li>
-                        </ul>
-                    </div><!--/.col-sm-4-->
-                </div> 
-				<div class="col-sm-2"></div>
-				<div class="col-sm-6">
-				<a href="<?=base_url()?>dashboard/plan_upgrade/" class="btn btn-primary btn-lg">Upgrade your plan</a>
-				</div>
-				<div style="clear:both;"></div>
-            </div> 
-			
-        </div>
-    </section>

@@ -79,7 +79,7 @@ else
 							<a href="<?=base_url()?>dashboard/">Dashboard</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 							<a href="<?=base_url()?>dashboard/change_password" >Change Password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?=base_url()?>index/signout/" >Log Out</a>
 						</div>
-						<?php }?>
+						<?php } else { ?>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="<?=base_url()?>#main-slider"><i class="icon-home"></i></a></li>
 							<li><a href="<?=base_url()?>#services">Features</a></li>
@@ -88,6 +88,7 @@ else
 							<li><a href="<?=base_url()?>#about-us">About Us</a></li>
 							<li><a href="<?=base_url()?>#contact">Contact</a></li>
 						</ul>
+						<?php } ?>
 						<?php if($isLogin == false) { ?>
 						<div class="signup-btn">
 						<a href="<?=base_url()?>signin">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?=base_url()?>signup">Sign Up</a>
