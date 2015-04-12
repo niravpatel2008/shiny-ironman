@@ -9,12 +9,17 @@ $packageArr = getPackages();
 
 <section id="purchasePlan">
             <div class="box_care">
+				<div class="center welcome">
+					<h3>My Plan Detail</h3>
+				</div>
                 <div class="center">
-                    <h2 style="color:#258dc8;">My Plan Detail</h2>
+                    
                 </div><!--/.center-->   
                 <div id="pricing-table" class="row">
+					
                    <div class="col-sm-1"></div>
                     <div class="col-sm-6">
+						<h4> Your Plan have this fetchers </h4>
                         <ul class="plan right-tic">
                             <li class="plan-name">Premium</li>
                             <li>Real-time chat</li>

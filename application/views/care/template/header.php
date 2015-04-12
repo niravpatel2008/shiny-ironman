@@ -16,7 +16,13 @@ else
     <link href="<?=public_path()?>css/font-awesome.min.css" rel="stylesheet">
     <link href="<?=public_path()?>css/prettyPhoto.css" rel="stylesheet">
     <link href="<?=public_path()?>css/main.css" rel="stylesheet">
+	<link href="<?=public_path()?>css/sb-admin.css" rel="stylesheet">
 	<link href="<?=public_path()?>css/simple-sidebar.css" rel="stylesheet">
+	 <!-- Custom Fonts -->
+    <link href="<?=public_path()?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<link href="<?=public_path()?>css/signup.css" rel="stylesheet" type="text/css">;
+	<link href="<?=public_path()?>css/validationEngine.css" rel="stylesheet" type="text/css">;
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
