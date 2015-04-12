@@ -20,6 +20,46 @@ class Dashboard extends CI_Controller {
         $this->load->view('care/content', $data);
     }
 	
+	public function profile() {
+	
+		 $post = $this->input->post();
+		 
+            if ($post) {
+				
+                $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
+                $this->form_validation->set_rules('lname', 'Last Name', 'trim|required');
+
+                if ($this->form_validation->run()) {
+					
+                    $insert_data = array(
+						'u_fname' => $post['fname'],
+                        'u_lname' => $post['lname'],
+                        'u_phone' => $post['phone'],
+                    );
+                    $ret = $this->common_model->updateData('users', $insert_data, 'u_id = ' . $this->front_session['u_id']);
+                   
+                    $this->session->set_flashdata('flash_arr', $flash_arr);
+					echo $retFlg;
+					exit;
+                    //redirect(base_url() . "dashboard");
+                }
+				else
+				{
+					$retFlg = -1;
+					//print_r($this->form_validation);die;
+					echo $retFlg;
+					exit;
+				}
+            }
+			
+		$where = array('u_id' => $this->front_session['u_id']);
+		$user = $this->common_model->selectData('users', '*', $where);
+        $data['user'] = $user[0];
+        $data['view'] = "profile";
+        $this->load->view('care/content', $data);
+    }
+	
+	
 	 public function purchaseplan() {
 		
         $data['view'] = "purchaseplan";

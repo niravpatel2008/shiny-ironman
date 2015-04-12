@@ -3,34 +3,27 @@
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand">
 				<a href="#">
-					Toggle navigation
+					User Admin
 				</a>
 			</li>
-			<li>
+			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='index'){ echo"class='active'";} ?> >
 				<a href="<?=base_url()?>dashboard/">Dashboard</a>
 			</li>
-			<li>
+			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='purchasePlan'){ echo"class='active'";} ?>>
 				<a href="<?=base_url()?>dashboard/purchasePlan">My Plan</a>
 			</li>
-			<li>
-				<a href="<?=base_url()?>dashboard/plan_upgrade/">Upgrade Plan</a>
+			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='plan_upgrade'){ echo"class='active'";} ?>>
+				<a href="<?=base_url()?>dashboard/plan_upgrade">Upgrade Plan</a>
 			</li>
-			<li>
-				<a href="#">Profile</a>
+			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='profile'){ echo"class='active'";} ?>>
+				<a href="<?=base_url()?>dashboard/profile">Profile</a>
 			</li>
 			<li>
 				<a href="#">Transactions</a>
 			</li>
 			<li>
-				<a href="<?=base_url()?>dashboard/change_password">Change Password</a>
-			</li>
-			<li>
 				<a href="#">Complaint</a>
 			</li>
-			<li>
-				<a href="<?=base_url()?>index/signout/">Logout</a>
-			</li>
-			
 		</ul>
 	</div>
 	 
