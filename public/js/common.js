@@ -47,18 +47,14 @@ $(document).ready(function() {
 			var url = baseurl+'signup/index';
 			var data = $("#frmSignup").serialize();
 			ajaxindicatorstart('we are setting up your account.. please wait..');
-		
+			
 			$.post(url,data,function(e){
 					ajaxindicatorstop();
-					if(e == '1'){
-						alert("Account Successfully Created");
-						location.href=baseurl+'/dashboard';
-					}
-					else if(e == '-1'){
+					if(e == '-1'){
 						alert("Unique Value Required for Email / Website / Subdomain");
 					}
 					else{
-						alert('Error Occured..Please Try again');
+						location.href=e;
 					}
 			});
 		}
