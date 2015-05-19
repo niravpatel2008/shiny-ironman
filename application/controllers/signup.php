@@ -13,7 +13,7 @@ class Signup extends CI_Controller {
         //if ($id > 0) {
 			/*$data = array('u_subdomain'=>'neo');
 			$this->common_model->setupApplication($data);*/
-			
+
             $post = $this->input->post();
             if ($post) {
                 $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
@@ -66,7 +66,7 @@ class Signup extends CI_Controller {
 						$userRes = $user[0];
 						$emailTpl = $this->load->view('email_templates/signup', '', true);
 
-						$search = array('{name}','{username}','{password}''{OrgName}');
+						$search = array('{name}','{username}','{password}','{OrgName}');
 						$replace = array($post['fname']." ".$post['lname'],$post['email'],$post['password'],'ChatAdmin');
 						$emailTpl = str_replace($search, $replace, $emailTpl);
 
