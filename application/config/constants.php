@@ -50,3 +50,13 @@ define('SUBJECT_CONTACT_ADMIN', 'Contact us');
 define('FROM_NAME', 'Dx Chat');
 define('SUBJECT_LOGIN_INFO', 'Login info');
 define('SUBJECT_DEAL_INFO', 'Deal info');
+
+/**
+* Paypal constants
+*/
+define('PAYPAL_API_VERSION', '84.00');
+define('PAYPAL_API_USER', 'sdk-three_api1.sdk.com');
+define('PAYPAL_API_PASSWORD', 'QFZCWN5HZM8VBG7Q');
+define('PAYPAL_API_SIGNATURE', 'A-IzJhZZjhg29XQ2qnhapuwxIDzyAZQ92FRP5dqBzVesOkzbdUONzmOU');
+define('PAYPAL_API_RETURN', '/signup/returnpay');
+define('PAYPAL_API_CANCEL', '/signup/cancelpay');
