@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
     }
 
     public function index() {
-		
+
 		$where = array('u_id' => $this->front_session['u_id']);
 		$user = $this->common_model->selectData('users', '*', $where);
         $data['user'] = $user[0];
