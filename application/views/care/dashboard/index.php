@@ -115,16 +115,16 @@ $packageArr = getPackages();
 							</div>
 							<div class="panel-body">
 							<div class="col-md-12">
-								<b> Your account url :</b><a href="http://<?php echo $user->u_subdomain?>.chat.com" target="_blank"> <?php echo $user->u_subdomain?>.chat.com</a>
+								<b> Your account url :</b><a href="http://<?php echo $user->up_subdomain?>.chat.com" target="_blank"> <?php echo $user->up_subdomain?>.chat.com</a>
 							</div>
 							<div class="col-md-12">
-								<b> Username :</b> <?php echo $user->u_subdomain;?>
+								<b> Username :</b> <?php echo $user->up_subdomain;?>
 							</div>
 							<div class="col-md-12">
-								<b> Your Plan :</b> <?=$packageArr[$user->u_package_id]['name']?>
+								<b> Your Plan :</b> <?=$packageArr[$user->up_package_id]['name']?>
 							</div>
 							<div class="col-md-12">
-								<b> Plan Expiry date :</b> <?php echo $user->u_package_expiry_date?>
+								<b> Plan Expiry date :</b> <?php echo $user->up_package_expiry_date?>
 							</div>
 								</div>
 					</div>
@@ -142,7 +142,7 @@ $packageArr = getPackages();
 								<b> Username :</b> <?php echo $user->u_phone;?>
 							</div>
 							<div class="col-md-12">
-								<b> Website :</b> <?php echo $user->u_website;?>
+								<b> Website :</b> <?php echo $user->up_website;?>
 							</div>
 							<div class="col-md-12">
 								<b> Status :</b> <?php if($user->u_active==1) { echo "Active"; } else { echo "Inactive"; } ?>
@@ -160,7 +160,7 @@ LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_
 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
 var refferer = (document.referrer) ? encodeURIComponent(document.referrer.substr(document.referrer.indexOf('://')+1)) : '';
 var location  = (document.location) ? encodeURIComponent(window.location.href.substring(window.location.protocol.length)) : '';
-po.src = '//<?php echo $user->u_subdomain?>.chat.com/index.php/chat/getstatus/(click)/internal/(position)/bottom_right/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true?r='+refferer+'&l='+location;
+po.src = '//<?php echo $user->up_subdomain?>.chat.com/index.php/chat/getstatus/(click)/internal/(position)/bottom_right/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true?r='+refferer+'&l='+location;
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>	</textarea>

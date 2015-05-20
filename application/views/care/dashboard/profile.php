@@ -26,10 +26,10 @@ echo $flash_arr['flash_msg'];
 
 				<label class="col-md-12" for="website">Website
 				</label>
-				<label class="col-md-12" style="color:#000000;"><b><?php echo $user->u_website; ?> </b></label>
+				<label class="col-md-12" style="color:#000000;"><b><?php echo $user->up_website; ?> </b></label>
 
 				<label class="col-md-12" for="subdomain">Subdomain Name </label>
-				<label class="col-md-12" style="color:#000000;"><b> <?php echo $user->u_subdomain; ?> </b></label>
+				<label class="col-md-12" style="color:#000000;"><b> <?php echo $user->up_subdomain; ?> </b></label>
 
 				<button type="submit" class="btn btn-primary btn-lg"  id="btnRegUser" name="btnRegUser" title="Register">UPDATE</button>
 			</form>

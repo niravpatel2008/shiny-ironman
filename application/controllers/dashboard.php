@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller {
     public function index() {
 
 		$where = array('u_id' => $this->front_session['u_id']);
-		$user = $this->common_model->selectData('users', '*', $where);
-        $data['user'] = $user[0];
+		$user = $this->common_model->joinData('users','user_plan',"users.u_id=user_plan.up_u_id", '*', $where);
+		$data['user'] = $user[0];
         $data['view'] = "index";
         $this->load->view('care/content', $data);
     }
@@ -107,7 +107,7 @@ class Dashboard extends CI_Controller {
         if ($post) {
             # upgrade plan
 			$hdnUid = $post['hdnUid'];
-			$data = array('u_package_id' => (trim($post['planSelect'])));
+			$data = array('up_package_id' => (trim($post['planSelect'])));
 			$ret = $this->common_model->updateData('users', $data, 'u_id = '. $hdnUid);
 
 			if ($ret > 0) {

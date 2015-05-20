@@ -48,7 +48,49 @@ class common_model extends CI_Model{
 
 		return $data;
 	}
+	/**
+	* Select join data
+	*
+	* general function to get result by passing nesessary parameters
+	*/
+	public function joinData($table,$join_table,$join_on, $fields='*',$where='', $order_by="", $order_type="", $group_by="", $limit="", $rows="", $type='')
+	{
+		$this->db->select($fields);
+		$this->db->from($table);
+		$this->db->join($join_table,$join_on);
+		if ($where != "") {
+			$this->db->where($where);
+		}
 
+		if ($order_by != '') {
+			$this->db->order_by($order_by,$order_type);
+		}
+
+		if ($group_by != '') {
+			$this->db->group_by($group_by);
+		}
+
+		if ($limit > 0 && $rows == "") {
+			$this->db->limit($limit);
+		}
+		if ($rows > 0) {
+			$this->db->limit($rows, $limit);
+		}
+
+
+		$query = $this->db->get();
+
+		if ($type == "rowcount") {
+			$data = $query->num_rows();
+		}else{
+			$data = $query->result();
+		}
+
+		#echo "<pre>"; print_r($this->db->queries); exit;
+		$query->free_result();
+
+		return $data;
+	}
 
 	/**
 	* Insert data
