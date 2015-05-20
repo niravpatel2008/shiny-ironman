@@ -86,6 +86,10 @@
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
+		// $config['smtp_host'] = "localhost";
+        // $config['smtp_port'] = "25";
+        $config['charset'] = 'utf-8';
+        $config['newline'] = "\r\n";
 
         $CI->email->initialize($config);
 
@@ -104,6 +108,7 @@
         $CI->email->message($emailTpl);
 
         $email_Sent = $CI->email->send();
+		$CI->email->clear();
         return $email_Sent;
     }
 

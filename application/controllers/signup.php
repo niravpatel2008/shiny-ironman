@@ -140,7 +140,7 @@ class Signup extends CI_Controller {
                     }
                     $this->session->set_flashdata('flash_arr', $flash_arr);
 					
-					redirect(base_url());
+					redirect(base_url()."dashboard");
 	}
 
 	public function cancelpay() {
