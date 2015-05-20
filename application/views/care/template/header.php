@@ -33,7 +33,7 @@ else
 			var baseurl='<?=base_url()?>';
 	</script>
 	<?php 
-		if(in_array($this->router->fetch_class(), array("signup","dashboard","index"))){
+		if(in_array($this->router->fetch_class(), array("signup","dashboard","index","complaint"))){
 			//echo '<script src="'.public_path().'js/jquery.backstretch.min.js"></script>';
 			echo '<script src="'.public_path().'js/btvalidationEngine-en.js"></script>';
 			

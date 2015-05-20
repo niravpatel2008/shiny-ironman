@@ -21,8 +21,8 @@
 			<li>
 				<a href="#">Transactions</a>
 			</li>
-			<li>
-				<a href="#">Complaint</a>
+			<li <?php if($this->router->fetch_class()=='complaint' && $this->router->fetch_method()=='index'){ echo"class='active'";} ?>>
+				<a href="<?=base_url()?>complaint">Complaint</a>
 			</li>
 		</ul>
 	</div>
