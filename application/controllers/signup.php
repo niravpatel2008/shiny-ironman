@@ -21,8 +21,8 @@ class Signup extends CI_Controller {
 				$this->form_validation->set_rules('email', 'Email', 'valid_email|trim|required|is_unique[users.u_email]');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[password2]');
                 $this->form_validation->set_rules('password2', 'Confirm password', 'trim|required');
-				$this->form_validation->set_rules('website', 'Website', 'trim|required|is_unique[users.u_website]');
-				$this->form_validation->set_rules('subdomain', 'Subdomain', 'trim|required|is_unique[users.u_subdomain]');
+				$this->form_validation->set_rules('website', 'Website', 'trim|required|is_unique[user_plan.up_website]');
+				$this->form_validation->set_rules('subdomain', 'Subdomain', 'trim|required|is_unique[user_plan.up_subdomain]');
 
                 if ($this->form_validation->run()) {
 					$packageId = $post['planSelect'];
@@ -43,13 +43,18 @@ class Signup extends CI_Controller {
                         'u_lname' => $post['lname'],
                         'u_email' => $post['email'],
                         'u_password' => md5($post['password']),
+						'u_created_date' => date('Y-m-d H:i:s'),
                         'u_phone' => $post['phone'],
-                        'u_package_id' => $packageId,
-                        'u_website' => $post['website'],
-						'u_subdomain' => $post['subdomain'],
-						'u_created_date' => date('Y-m-d'),
-						'u_package_expiry_date' => $expDate,
 						'u_active' => 1
+                        
+                    );
+					$plan_data = array(
+                        'up_package_id' => $packageId,
+                        'up_website' => $post['website'],
+						'up_subdomain' => $post['subdomain'],
+						'up_created_date' => date('Y-m-d H:i:s'),
+						'up_package_expiry_date' => $expDate,
+						'up_status' => 'Active'
                     );
 					
 					/* Paypal payment code */
@@ -69,6 +74,7 @@ class Signup extends CI_Controller {
 						$url = $paypal->getRedirectURL();
 						$payment["payment"] =  $paypal->getResponse();
 						$payment["user_data"] =  $insert_data;
+						$payment["plan_data"] =  $plan_data;
 						$this->session->set_userdata('payment_session', $payment);
 						echo $url;exit;
 					} else {
@@ -99,6 +105,7 @@ class Signup extends CI_Controller {
 					$token = $get['token'];
 					$payment_data = $this->session->userdata('payment_session');
 					$insert_data = $payment_data['user_data'];
+					$plan_data = $payment_data['plan_data'];
 					$payment = $payment_data['payment'];
 
 					if (!isset($insert_data))
@@ -108,13 +115,15 @@ class Signup extends CI_Controller {
 						redirect(base_url());
 					
 					$ret = $this->common_model->insertData('users', $insert_data);
+					$plan_data['up_u_id']=$ret;
+					$plan = $this->common_model->insertData('user_plan', $plan_data);
                     # create session
                     $data = array('u_id' => $ret,
                         'u_email' => $post['email']
                     );
                     $this->session->set_userdata('front_session', $data);
 
-                    if ($ret > 0) {
+                    if ($plan > 0) {
 						$this->common_model->setupApplication($insert_data);
 						
 						## send mail
