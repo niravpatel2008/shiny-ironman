@@ -18,6 +18,9 @@
 			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='profile'){ echo"class='active'";} ?>>
 				<a href="<?=base_url()?>dashboard/profile">Profile</a>
 			</li>
+			<li <?php if($this->router->fetch_class()=='dashboard' && $this->router->fetch_method()=='purchase'){ echo"class='active'";} ?>>
+				<a href="<?=base_url()?>dashboard/purchase">Purchase more domain</a>
+			</li>
 			<li>
 				<a href="#">Transactions</a>
 			</li>

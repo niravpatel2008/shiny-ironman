@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller {
 
 		$where = array('u_id' => $this->front_session['u_id']);
 		$user = $this->common_model->joinData('users','user_plan',"users.u_id=user_plan.up_u_id", '*', $where);
-		$data['user'] = $user[0];
+		$data['user'] = $user;
         $data['view'] = "index";
         $this->load->view('care/content', $data);
     }
@@ -59,7 +59,120 @@ class Dashboard extends CI_Controller {
         $this->load->view('care/content', $data);
     }
 	
+	public function purchase() {
 	
+		 $post = $this->input->post();
+		 
+            if ($post) {
+				
+				$this->form_validation->set_rules('website', 'Website', 'trim|required|is_unique[user_plan.up_website]');
+				$this->form_validation->set_rules('subdomain', 'Subdomain', 'trim|required|is_unique[user_plan.up_subdomain]');
+                $this->form_validation->set_rules('planSelect', 'Select Plan', 'trim|required');
+
+                if ($this->form_validation->run()) {
+					$packageId = $post['planSelect'];
+					switch($packageId)
+					{
+						case 1:
+							$expDate=Date('Y-m-d', strtotime("+30 days"));
+						break;
+						case 2:
+							$expDate=Date('Y-m-d', strtotime("+180 days"));
+						break;
+						case 3:
+							$expDate=Date('Y-m-d', strtotime("+365 days"));
+						break;
+					}
+                   $plan_data = array(
+						'up_u_id'=>$this->front_session['u_id'],
+                        'up_package_id' => $packageId,
+                        'up_website' => $post['website'],
+						'up_subdomain' => $post['subdomain'],
+						'up_created_date' => date('Y-m-d H:i:s'),
+						'up_package_expiry_date' => $expDate,
+						'up_status' => 'Active'
+                    );
+					/* Paypal payment code */
+					$this->load->helper('paypal');
+					$paypal = new wp_paypal_gateway (true);
+					
+					// Required Parameter for the getExpresscheckout
+					$param = array(
+						'amount' => 200,
+						'currency_code' => 'USD',
+						'payment_action' => 'Sale',
+					);
+					$param["return_url"] = base_url()."dashboard/returnpay";
+					$param["cancel_url"] = base_url().PAYPAL_API_CANCEL;
+					// Display the response if successful or the debug info
+					if ($paypal->setExpressCheckout($param)) {
+						$res=$paypal->getResponse();
+						$url = $paypal->getRedirectURL();
+						$payment["payment"] =  $paypal->getResponse();
+						$payment["plan_data"] =  $plan_data;
+						$this->session->set_userdata('ppayment_session', $payment);
+						redirect($url);
+					} else {
+						print_r($paypal->debug_info);
+					}
+					exit;
+                   
+                }
+				else
+				{
+					$retFlg = -1;
+					echo $retFlg;
+					exit;
+				}
+            }
+		
+		$data['packages'] = getPackages();
+        $data['view'] = "purchase";
+        $this->load->view('care/content', $data);
+    }
+	
+	public function returnpay() {
+			$get = $this->input->get();
+			$token = $get['token'];
+			$payment_data = $this->session->userdata('ppayment_session');
+			
+			$plan_data = $payment_data['plan_data'];
+			$payment = $payment_data['payment'];
+
+			if (!isset($plan_data))
+				redirect(base_url());
+
+			if ($payment['TOKEN'] != $token)
+				redirect(base_url());
+			
+			$plan = $this->common_model->insertData('user_plan', $plan_data);
+			
+			if ($plan > 0) {
+				$this->common_model->setupApplication($plan_data);
+				
+				## send mail
+				// $emailTpl = $this->load->view('email_templates/signup', '', true);
+
+				// $search = array('{name}','{username}','{password}','{OrgName}');
+				// $replace = array($post['fname']." ".$post['lname'],$post['email'],$post['password'],'ChatAdmin');
+				// $emailTpl = str_replace($search, $replace, $emailTpl);
+
+				// $ret = sendEmail($userRes->u_email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);
+
+				$flash_arr = array('flash_type' => 'success',
+					'flash_msg' => 'Welcome to DX chat again.'
+				);
+				$retFlg = 1;
+			} else {
+				$flash_arr = array('flash_type' => 'error',
+					'flash_msg' => 'An error occurred while processing.'
+				);
+				$retFlg = 0;
+			}
+			$this->session->set_flashdata('flash_arr', $flash_arr);
+			
+			redirect(base_url()."dashboard");
+	}
 	 public function purchaseplan() {
 		
         $data['view'] = "purchaseplan";

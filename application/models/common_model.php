@@ -181,7 +181,7 @@ class common_model extends CI_Model{
 		$path = realpath('./chat_db/master.sql');
 			 
 		$this->load->dbforge();
-		$dbname = $data['u_subdomain']."_chat";
+		$dbname = $data['up_subdomain']."_chat";
 		if ($this->dbforge->create_database($dbname))
 		{
 			$this->db->query('use '.$dbname);

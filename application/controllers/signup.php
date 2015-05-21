@@ -67,7 +67,8 @@ class Signup extends CI_Controller {
 						'currency_code' => 'USD',
 						'payment_action' => 'Sale',
 					);
-					 
+					$param["return_url"] = base_url().PAYPAL_API_RETURN;
+					$param["cancel_url"] = base_url().PAYPAL_API_CANCEL;
 					// Display the response if successful or the debug info
 					if ($paypal->setExpressCheckout($param)) {
 						$res=$paypal->getResponse();
@@ -76,7 +77,7 @@ class Signup extends CI_Controller {
 						$payment["user_data"] =  $insert_data;
 						$payment["plan_data"] =  $plan_data;
 						$this->session->set_userdata('payment_session', $payment);
-						echo $url;exit;
+						redirect($url);
 					} else {
 						print_r($paypal->debug_info);
 					}
@@ -104,8 +105,10 @@ class Signup extends CI_Controller {
 					$get = $this->input->get();
 					$token = $get['token'];
 					$payment_data = $this->session->userdata('payment_session');
+					
 					$insert_data = $payment_data['user_data'];
 					$plan_data = $payment_data['plan_data'];
+					
 					$payment = $payment_data['payment'];
 
 					if (!isset($insert_data))
@@ -124,7 +127,7 @@ class Signup extends CI_Controller {
                     $this->session->set_userdata('front_session', $data);
 
                     if ($plan > 0) {
-						$this->common_model->setupApplication($insert_data);
+						$this->common_model->setupApplication($plan_data);
 						
 						## send mail
 						//$login_details = array('u_email' => $user[0]->email,'u_password' => $newpassword);
