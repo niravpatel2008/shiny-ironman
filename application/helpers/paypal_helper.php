@@ -132,8 +132,6 @@ class wp_paypal_gateway
      */
     public function setExpressCheckout($param)
     {
-		$param["return_url"] = base_url().PAYPAL_API_RETURN;
-		$param["cancel_url"] = base_url().PAYPAL_API_CANCEL;
         return $this->requestExpressCheckout('SetExpressCheckout', $param);
     }
 

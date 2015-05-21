@@ -81,13 +81,15 @@
 
         $CI->load->library('email');
 
-		$config['protocol'] = 'sendmail';
-		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['protocol'] = 'smtp';
+		//$config['mailpath'] = '/usr/sbin/sendmail';
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
-		// $config['smtp_host'] = "localhost";
-        // $config['smtp_port'] = "25";
+		// $config['smtp_host'] = "ssl://smtp.ipage.com";
+        // $config['smtp_port'] = "465";
+        // $config['smtp_user'] = "XXXX@gmail.com";
+        // $config['smtp_pass'] = "XXXXX";
         $config['charset'] = 'utf-8';
         $config['newline'] = "\r\n";
 
