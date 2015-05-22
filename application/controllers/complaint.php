@@ -39,13 +39,13 @@ class Complaint extends CI_Controller {
 					
 					sendEmail(ADMIN_EMAIL, SUBJECT_COMPLAINT, $emailTpl, FROM_EMAIL, FROM_NAME);
 					 $flash_arr = array('flash_type' => 'success',
-                            'flash_msg' => 'Your complain submited successfully.'
+                            'flash_msg' => 'Your complain submitted successfully.'
                         );
 					 }
 					 else
 					 {
 						$flash_arr = array('flash_type' => 'error',
-                            'flash_msg' => 'Your complain submition fail.'
+                            'flash_msg' => 'Your complain submission fail.'
                         );
 					 }
 					 $this->session->set_flashdata('flash_arr', $flash_arr);

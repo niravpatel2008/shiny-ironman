@@ -710,3 +710,8 @@ background:#f3f3f3;
 #services h3{
 font-size:33px;
 }
+.msg-display{
+position : absolute;
+width:91%;
+z-index:10000;
+}

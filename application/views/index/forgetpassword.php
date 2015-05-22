@@ -1,7 +1,4 @@
-<?php
-$flash_arr = $this->session->flashdata('flash_arr');
-echo $flash_arr['flash_msg'];
-?>
+
 <div class="register-container container" style="width:540px;margin:0 auto;">
 	<div class="row">
 		<div class="register span6">

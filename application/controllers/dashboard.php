@@ -37,7 +37,9 @@ class Dashboard extends CI_Controller {
                         'u_phone' => $post['phone'],
                     );
                     $ret = $this->common_model->updateData('users', $insert_data, 'u_id = ' . $this->front_session['u_id']);
-                   
+					$flash_arr = array('flash_type' => 'success',
+                            'flash_msg' => 'Profile successfully updated'
+                        );
                     $this->session->set_flashdata('flash_arr', $flash_arr);
 					echo $retFlg;
 					exit;
