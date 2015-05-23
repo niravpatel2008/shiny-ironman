@@ -44,6 +44,10 @@ class Index extends CI_Controller {
                         'u_email' => $user[0]->u_email
                     );
                     $this->session->set_userdata('front_session', $data);
+					$flash_arr = array('flash_type' => 'success',
+                        'flash_msg' => 'Login successful'
+                    );
+                    $this->session->set_flashdata('flash_arr', $flash_arr);
                     redirect("dashboard");
                 } else {
                     $flash_arr = array('flash_type' => 'error',
