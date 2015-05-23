@@ -715,3 +715,9 @@ position : absolute;
 width:91%;
 z-index:10000;
 }
+.msg-care-display{
+position : absolute;
+width:75%;
+z-index:10000;
+margin-top:15px;
+}
