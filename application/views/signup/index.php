@@ -37,7 +37,7 @@
 				<select id="planSelect" name="planSelect">
 					<?php
 					foreach ($packages as $k=>$item) {?>
-						<option value="<?= $item['id'];?>"><?= $item['name']." - $".$item['price']." for ".$item['duration'];?></option>
+						<option value="<?= $item->package_id;?>"><?= $item->package_name." - $".$item->package_price." for ".$item->package_description;?></option>
 					<?php }?>
 				</select>
 
