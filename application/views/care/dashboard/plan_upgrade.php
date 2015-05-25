@@ -12,15 +12,14 @@
 
 				<label for="plan">Select Plan</label>
 				<select id="planSelect" name="planSelect">
+					<option value=""> </option>
 					<?php
 					foreach ($packages as $k=>$item)
 					{
-					$selected = '';
-					if($user->u_package_id == $item['id'])
-						$selected='selected';
+					if($item->package_id!=1) {
 					?>
-						<option value="<?= $item['id'];?>" <?=$selected;?>><?= $item['name']." - $".$item['price']." for ".$item['duration'];?></option>
-					<?php }?>
+						<option value="<?= $item->package_id;?>"><?= $item->package_name." - $".$item->package_price." for ".$item->package_description;?></option>
+					<?php } }?>
 				</select>
 
 				<button type="submit" class="btn btn-primary btn-lg"  id="btnUpgradePlan" name="btnUpgradePlan" title="Upgrade Plan">Upgrade Plan</button>

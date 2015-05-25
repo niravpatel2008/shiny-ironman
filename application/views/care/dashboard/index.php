@@ -117,7 +117,7 @@ $packageArr = getPackages();
 									<b> Username :</b> <?php echo $domain->up_subdomain;?>
 								</div>
 								<div class="col-md-12">
-									<b> Your Plan :</b> <?=$packageArr[$domain->up_package_id]['name']?>
+									<b> Your Plan :</b> <?=$packageArr[$domain->up_package_id-1]->package_name;?>
 								</div>
 								<div class="col-md-12">
 									<b> Plan Expiry date :</b> <?php echo $domain->up_package_expiry_date?>

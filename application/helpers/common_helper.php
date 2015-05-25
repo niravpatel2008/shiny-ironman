@@ -86,10 +86,10 @@
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
-		// $config['smtp_host'] = "ssl://smtp.ipage.com";
-        // $config['smtp_port'] = "465";
-        // $config['smtp_user'] = "XXXX@gmail.com";
-        // $config['smtp_pass'] = "XXXXX";
+		$config['smtp_host'] = "ssl://smtp.gmail.com";
+        $config['smtp_port'] = "465";
+        $config['smtp_user'] = "dx.replyme@gmail.com";
+        $config['smtp_pass'] = "dxchat123";
         $config['charset'] = 'utf-8';
         $config['newline'] = "\r\n";
 
@@ -126,10 +126,14 @@
 
 	function getPackages()
 	{
+		$CI =& get_instance();
 		$packageArr = array();
-		$packageArr[1]=array('id'=>1,'name'=>'Free','price'=>0,'duration'=>'1 Month');
-		$packageArr[2]=array('id'=>2,'name'=>'Premium','price'=>99,'duration'=>'6 Months');
-		$packageArr[3]=array('id'=>3,'name'=>'Enterprise','price'=>199,'duration'=>'1 Year');
+		$packageArr = $CI->common_model->selectData('packages','*');
+		#print_r($packageArr);exit;
+		
+		// $packageArr[1]=array('id'=>1,'name'=>'Free','price'=>0,'duration'=>'1 Month');
+		// $packageArr[2]=array('id'=>2,'name'=>'Premium','price'=>99,'duration'=>'6 Months');
+		// $packageArr[3]=array('id'=>3,'name'=>'Enterprise','price'=>199,'duration'=>'1 Year');
 		return $packageArr;
 	}
 ?>
