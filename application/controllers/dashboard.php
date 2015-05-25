@@ -143,6 +143,39 @@ class Dashboard extends CI_Controller {
         $this->load->view('care/content', $data);	
 	}
 
+	public function gotopaypal()
+	{
+		$post = $this->input->post();
+		//echo 'hello';
+		$packages = getPackages();
+		//print_r($packages);
+		//print_r($post);
+		$price = $packages[$post['planSelect']]['price'];
+		$this->load->helper('paypal');
+		$paypal = new wp_paypal_gateway (true);
+
+		// Required Parameter for the getExpresscheckout
+		$param = array(
+			'amount' => $price,
+			'currency_code' => 'USD',
+			'payment_action' => 'Sale',
+		);
+		 //print_r($_SESSION);die;
+		// Display the response if successful or the debug info
+		if ($paypal->setExpressCheckout($param)) {
+			$res=$paypal->getResponse();
+			$url = $paypal->getRedirectURL();
+			$payment["payment"] =  $paypal->getResponse();
+			$payment["user_data"] =  $insert_data;
+			$this->session->set_userdata('payment_session', $payment);
+			//echo $url;exit;
+			redirect($url);
+		} else {
+			print_r($paypal->debug_info);
+		}
+		exit;
+	}
+
 }
 
 /* End of file dashboard.php */
