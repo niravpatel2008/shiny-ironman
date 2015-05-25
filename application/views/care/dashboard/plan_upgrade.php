@@ -7,7 +7,7 @@ echo $flash_arr['flash_msg'];
 	<div class="row">
 		<div class="register span6">
 
-			<form id="frmPlanUpgrade" name="frmPlanUpgrade" method="post">
+			<form id="frmPlanUpgrade" name="frmPlanUpgrade" method="post" action="http://<?=$_SERVER['HTTP_HOST'];?>/chat/dashboard/gotopaypal">
 				<h2>Upgrade Plan</h2>
 				<input type="hidden" id="hdnUid" name="hdnUid" value="<?=$user->u_id;?>" />
 				<label for="name">Name : <?= $user->u_fname." ".$user->u_lname; ?> </label>
