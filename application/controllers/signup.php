@@ -69,6 +69,7 @@ class Signup extends CI_Controller {
 					);
 					$param["return_url"] = base_url().PAYPAL_API_RETURN;
 					$param["cancel_url"] = base_url().PAYPAL_API_CANCEL;
+					
 					// Display the response if successful or the debug info
 					if ($paypal->setExpressCheckout($param)) {
 						$res=$paypal->getResponse();
@@ -77,7 +78,7 @@ class Signup extends CI_Controller {
 						$payment["user_data"] =  $insert_data;
 						$payment["plan_data"] =  $plan_data;
 						$this->session->set_userdata('payment_session', $payment);
-						redirect($url);
+						echo $url;
 					} else {
 						print_r($paypal->debug_info);
 					}
