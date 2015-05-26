@@ -202,6 +202,18 @@ class common_model extends CI_Model{
 					$templine = '';
 				}
 			}
+
+			/*Create config file*/
+			$config = array ();
+			$config['title'] = $data['up_subdomain'];
+			$config['dbhost'] = DB_HOSTNAME;
+			$config['dbuser'] = DB_USERNAME;
+			$config['dbpass'] = DB_PASSWORD;
+			$config['dbname'] = $dbname;
+			$arrayContent = $this->load->view('template/config', $config,true);
+			
+			$arrayContent = "<?php $arrayContent ?>";
+			file_put_contents("./chattool/settings/".$data['up_subdomain'].".settings.ini.php",$arrayContent);
 		}
 	}
 }
