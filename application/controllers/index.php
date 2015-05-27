@@ -41,7 +41,8 @@ class Index extends CI_Controller {
                 if (count($user) > 0) {
                     # create session
                     $data = array('u_id' => $user[0]->u_id,
-                        'u_email' => $user[0]->u_email
+                        'u_email' => $user[0]->u_email,
+						'u_name'=> $user[0]->u_fname.' '.$user[0]->u_lname
                     );
                     $this->session->set_userdata('front_session', $data);
 					$flash_arr = array('flash_type' => 'success',

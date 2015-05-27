@@ -76,12 +76,15 @@ class Dashboard extends CI_Controller {
 					switch($packageId)
 					{
 						case 1:
-							$expDate=Date('Y-m-d', strtotime("+30 days"));
+							$expDate=Date('Y-m-d', strtotime("+20 days"));
 						break;
 						case 2:
-							$expDate=Date('Y-m-d', strtotime("+180 days"));
+							$expDate=Date('Y-m-d', strtotime("+30 days"));
 						break;
 						case 3:
+							$expDate=Date('Y-m-d', strtotime("+180 days"));
+						break;
+						case 4:
 							$expDate=Date('Y-m-d', strtotime("+365 days"));
 						break;
 					}
@@ -123,8 +126,13 @@ class Dashboard extends CI_Controller {
 				else
 				{
 					$retFlg = -1;
-					echo $retFlg;
-					exit;
+					//echo $retFlg;
+					//exit;
+					 $flash_arr = array('flash_type' => 'error',
+                        'flash_msg' => 'Website / subdomain is already used please try with another.'
+                    );
+                    $this->session->set_flashdata('flash_arr', $flash_arr);
+                    redirect("dashboard/purchase");
 				}
             }
 		
@@ -150,11 +158,7 @@ class Dashboard extends CI_Controller {
 			$plan = $this->common_model->insertData('user_plan', $plan_data);
 			
 			if ($plan > 0) {
-				
-				$where = array('u_id' => $this->front_session['u_id']);
-				$user = $this->common_model->selectData('users', '*', $where);
-								
-				$this->common_model->setupApplication($plan_data,$user[0]);
+				$this->common_model->setupApplication($plan_data);
 				
 				## send mail
 				// $emailTpl = $this->load->view('email_templates/signup', '', true);
@@ -223,44 +227,176 @@ class Dashboard extends CI_Controller {
 		$post = $this->input->post();
 		$where = array('u_id' => $this->front_session['u_id']);
 		$user = $this->common_model->selectData('users', '*', $where);
+		$where = array('up_u_id' => $this->front_session['u_id']);
+		$user_plan = $this->common_model->selectData('user_plan', '*', $where);
         if ($post) {
-            # upgrade plan
-			$hdnUid = $post['hdnUid'];
-			$data = array('up_package_id' => (trim($post['planSelect'])));
-			$ret = $this->common_model->updateData('users', $data, 'u_id = '. $hdnUid);
+			$this->session->set_userdata('tmpPostParam',$post);//temp store plan info in sessin var.
 
-			if ($ret > 0) {
-				## send mail
-				//$login_details = array('u_email' => $user[0]->email,'u_password' => $newpassword);
-				$userRes = $user[0];
-				$emailTpl = $this->load->view('email_templates/renewaftersubscription', '', true);
-
-				$search = array('{name}', '{OrgName}');
-				$replace = array($userRes->u_fname." ".$userRes->u_lname,'ChatAdmin');
-				$emailTpl = str_replace($search, $replace, $emailTpl);
-
-				$ret = sendEmail($userRes->u_email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);
-
-				$flash_arr = array('flash_type' => 'success',
-					'flash_msg' => 'Congratulations !! Plan has been upgraded Successfully.'
-				);
-				$this->session->set_flashdata('flash_arr', $flash_arr);
-				redirect("dashboard");
+			/* Paypal payment code */
+			$this->load->helper('paypal');
+			$paypal = new wp_paypal_gateway (true);
+			
+			// Required Parameter for the getExpresscheckout
+			$param = array(
+				'amount' => 200,
+				'currency_code' => 'USD',
+				'payment_action' => 'Sale',
+			);
+			$param["return_url"] = base_url()."dashboard/planUpgradeSuccess";
+			$param["cancel_url"] = base_url().PAYPAL_API_CANCEL;
+			// Display the response if successful or the debug info
+			if ($paypal->setExpressCheckout($param)) {
+				$res=$paypal->getResponse();
+				$url = $paypal->getRedirectURL();
+				$payment["payment"] =  $paypal->getResponse();
+				//$payment["plan_data"] =  $plan_data;
+				$this->session->set_userdata('ppayment_session', $payment);
+				redirect($url);
 			} else {
-				$flash_arr = array('flash_type' => 'error',
-					'flash_msg' => 'An error occured while processing.'
-				);
-				$this->session->set_flashdata('flash_arr', $flash_arr);
-				redirect("dashboard/plan_upgrade");
+				print_r($paypal->debug_info);
 			}
-            
-        }
+			exit;
+		}
 		
 		$data['user'] = $user[0];
 		$data['packages'] = getPackages();
+		$data['user_plan']=$user_plan;
         $data['view'] = "plan_upgrade";
         $this->load->view('care/content', $data);	
 	}
+
+
+	public function planUpgradeSuccess()
+	{
+		$post = $this->session->userdata('tmpPostParam');
+		//echo '<pre>';print_r($post);print_r($this->session->userdata('ppayment_session'));die;
+		$uid = $this->front_session['u_id'];
+		
+
+		$where = array('u_id' => $uid);
+		$user = $this->common_model->selectData('users', '*', $where);
+		
+		//echo 'ddd';print_r($planSelect);die;
+		# upgrade plan
+		$hdnUid = $post['hdnUid'];
+		switch($post['planSelect'])
+		{
+			case 1:
+				$expDate=Date('Y-m-d', strtotime("+20 days"));
+			break;
+			case 2:
+				$expDate=Date('Y-m-d', strtotime("+30 days"));
+			break;
+			case 3:
+				$expDate=Date('Y-m-d', strtotime("+180 days"));
+			break;
+			case 4:
+				$expDate=Date('Y-m-d', strtotime("+365 days"));
+			break;
+		}
+
+		//echo $hdnUid.'==';print_r($ret);die;
+		$paypalResp = $this->session->userdata('ppayment_session');
+		if(isset($paypalResp['payment']) && !empty($paypalResp['payment']))
+		{
+			$payment = $paypalResp['payment'];
+			$token = $payment['TOKEN']; 
+			$status = $payment['ACK'];
+
+			$insert_data = array(
+			't_upid'=>$post['domainSelect'],
+			't_creationdate'=>date('Y-m-d H:i:s'),
+			't_packageid'=>$post['planSelect'],
+			't_paypaltoken'=>$token,
+			't_status'=>$status
+			);
+			$ret = $this->common_model->insertData('transaction', $insert_data);
+		}
+		else
+		{
+			$flash_arr = array('flash_type' => 'error',
+			'flash_msg' => 'An error occured while processing payment.'
+			);
+			$this->session->set_flashdata('flash_arr', $flash_arr);
+			redirect("dashboard/plan_upgrade");
+		}
+
+		if(strtolower($status) == 'success')
+		{
+			$data = array('up_package_id' => ($post['planSelect']),'up_package_expiry_date'=>$expDate);
+			$where = array('up_u_id'=>$hdnUid,'up_id'=>$post['domainSelect']);
+			$ret = $this->common_model->updateData('user_plan', $data,$where);
+		}
+		
+		if ($ret > 0) {
+			## send mail
+			//$login_details = array('u_email' => $user[0]->email,'u_password' => $newpassword);
+			$userRes = $user[0];
+			$emailTpl = $this->load->view('email_templates/renewaftersubscription', '', true);
+
+			$search = array('{name}', '{OrgName}');
+			$replace = array($userRes->u_fname." ".$userRes->u_lname,'ChatAdmin');
+			$emailTpl = str_replace($search, $replace, $emailTpl);
+
+			$ret = sendEmail($userRes->u_email, SUBJECT_LOGIN_INFO, $emailTpl, FROM_EMAIL, FROM_NAME);
+
+			$flash_arr = array('flash_type' => 'success',
+				'flash_msg' => 'Congratulations !! Plan has been upgraded Successfully.'
+			);
+			$this->session->set_flashdata('flash_arr', $flash_arr);
+			redirect("dashboard");
+		} else {
+			$flash_arr = array('flash_type' => 'error',
+				'flash_msg' => 'An error occured while processing.'
+			);
+			$this->session->set_flashdata('flash_arr', $flash_arr);
+			redirect("dashboard/plan_upgrade");
+		}
+	}
+
+	public function transaction()
+	{
+		$where = array('up_u_id' => $this->front_session['u_id']);
+		$user_plan = $this->common_model->joinData('user_plan','packages', "user_plan.up_package_id =packages.package_id ",'*', $where);
+		$data['user_plan']=$user_plan;
+
+		$data['view'] = "transaction";
+        $this->load->view('care/content', $data);
+	}
+
+	/*public function gotopaypal()
+	{
+		$post = $this->input->post();
+		//echo 'hello';
+		$packages = getPackages();
+		//print_r($packages);
+		//print_r($post);
+		$price = $packages[$post['planSelect']]['price'];
+		$this->load->helper('paypal');
+		$paypal = new wp_paypal_gateway (true);
+
+		// Required Parameter for the getExpresscheckout
+		$param = array(
+			'amount' => $price,
+			'currency_code' => 'USD',
+			'payment_action' => 'Sale',
+		);
+		 //print_r($_SESSION);die;
+		// Display the response if successful or the debug info
+		if ($paypal->setExpressCheckout($param)) {
+			$res=$paypal->getResponse();
+			$url = $paypal->getRedirectURL();
+			$payment["payment"] =  $paypal->getResponse();
+			$payment["user_data"] =  $insert_data;
+			$this->session->set_userdata('payment_session', $payment);
+			//echo $url;exit;
+			redirect($url);
+		} else {
+			print_r($paypal->debug_info);
+		}
+		exit;
+
+	}*/
 
 }
 

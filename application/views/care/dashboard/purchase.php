@@ -6,7 +6,7 @@
 		<div class="register span6">
 			<!--<form action="" method="post">-->
 			<form id="frmPurchase" name="frmPurchase" method="post" accept-charset="UTF-8">
-				<h2>Purchase more domain</h2>
+				<h2 class="clsPurchaseDom">Purchase more domain</h2>
 				
 				<label for="website"><span class="red">* </span>Website
 				<span style="font-size:10px;color:#777;"> (website must be unique)</span>

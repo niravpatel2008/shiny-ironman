@@ -16,7 +16,7 @@ $packageArr = getPackages();
 					
                    <div class="col-sm-1"></div>
                     <div class="col-sm-6">
-						<h4> Your Plan have this fetchers </h4>
+						<h4> Your Plan have this feautures </h4>
                         <ul class="plan right-tic">
                             <li class="plan-name">Premium</li>
                             <li>Real-time chat</li>
